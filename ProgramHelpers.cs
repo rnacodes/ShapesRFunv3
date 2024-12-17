@@ -42,10 +42,11 @@ public class ProgramHelpers
             return area;
         }
 
+
     //This method adds the areas of two shapes together
-    public static double AddShapes(ICalculateArea shape1, ICalculateArea shape2)
+    public static int AddShapes(int area, int secondShapeArea)
     {
-        return shape1.GetArea() + shape2.GetArea();
+        return Convert.ToInt32(area) + Convert.ToInt32(secondShapeArea);
     }
 }
 

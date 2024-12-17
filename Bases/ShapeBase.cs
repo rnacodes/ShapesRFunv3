@@ -14,7 +14,7 @@ public abstract class ShapeBase : ICalculateArea
 
 
     /* UPDATE THIS ONCE IGETPERIMETER IS ADDED
-        // Abstract method for getting the perimeter that is inherited from the IGetPerimeter interface
+        // Abstract method for getting the perimeter that is inherited from the IAddShapes interface
         public virtual int GetPerimeter()
         {
             return 4 * Dimension;

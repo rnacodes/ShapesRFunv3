@@ -1,7 +1,4 @@
 ﻿namespace ShapesRFun;
-
-
-
 internal class Program
 {
     static void Main()
@@ -39,7 +36,7 @@ internal class Program
 
         Console.WriteLine("Thank you! I will now calculate the area of the shape.");
 
-        Thread.Sleep(1000);
+        Thread.Sleep(500);
 
         Console.WriteLine("Calculating.....................");
 
@@ -50,6 +47,62 @@ internal class Program
             area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1);
 
         Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
+        Thread.Sleep(500);
+
+        Console.WriteLine("Would you like to add another shape to this one? If so, please enter another.");
+
+        string secondShapeToBuild = Console.ReadLine();
+        secondShapeToBuild = secondShapeToBuild.ToLower();
+        int secondShapeSize1 = 0;
+        int secondShapeSize2 = 0;
+        int secondShapeArea = 0;
+        int combinedShapeArea = 0;
+
+        Console.WriteLine("For Shape Number 2: What is the first dimension of the " + secondShapeToBuild + "?");
+
+        shapeSize1 = int.Parse(Console.ReadLine());
+
+        if (secondShapeToBuild == "rectangle" || secondShapeToBuild == "triangle")
+        {
+            Console.WriteLine("What is the second dimension of the " + secondShapeToBuild + "?");
+            shapeSize2 = int.Parse(Console.ReadLine());
+            secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1, secondShapeSize2);
+        } else
+        {
+            secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1);
+        }
+        
+        //area = Convert.ToInt32(area);
+        //secondShapeArea = Convert.ToInt32(secondShapeArea);
+
+        combinedShapeArea = ProgramHelpers.AddShapes(area, secondShapeArea);
+
+        Console.WriteLine("The combined area of the two shapes is " + combinedShapeArea + ".");
+
+        Thread.Sleep(500);
+
+        Console.WriteLine("Would you like to hear a joke about your first shape?");
+        string jokeAnswer = Console.ReadLine();
+
+       // string jokeShape = Console.ReadLine();
+       // jokeShape = jokeShape.ToLower();
+
+        //Console.WriteLine("What is the name of the shape you would like a joke for?");
+
+        switch (shapeToBuild)
+        {
+            case "square":
+                Square squareJoke = new Square();
+                squareJoke.SquareSpecial();
+                break;
+            case "triangle":
+                Triangle triangleJoke = new Triangle();
+                triangleJoke.TriangleSpecial();
+                break;
+            default:
+                Console.WriteLine("I'm sorry, those shapes aren't very funny.");
+                break;
+        }
     }
 
 }

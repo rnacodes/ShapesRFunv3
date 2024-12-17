@@ -3,32 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\interfaces\\ichangeshapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:interfaces\\ichangeshapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\shapes\\square.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:shapes\\square.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\bases\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:bases\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\interfaces\\igetperimeter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:interfaces\\igetperimeter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\interfaces\\iaddshapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:interfaces\\iaddshapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\programhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +15,32 @@
       "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:bases\\specialshapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\interfaces\\icalculatearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:interfaces\\icalculatearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\shapes\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:shapes\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\bases\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:bases\\shapebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|c:\\users\\rasante\\source\\repos\\shapesrfun\\interfaces\\ichangeshapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EC485B9-CBEC-46B6-B007-D0EF34244672}|ShapesRFun.csproj|solutionrelative:interfaces\\ichangeshapes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,24 +66,54 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IAddShapes.cs",
+              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IAddShapes.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IAddShapes.cs",
+              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IAddShapes.cs",
+              "RelativeToolTip": "Interfaces\\IAddShapes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:08:59.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Circle.cs",
+              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Circle.cs",
+              "RelativeDocumentMoniker": "Shapes\\Circle.cs",
+              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Circle.cs",
+              "RelativeToolTip": "Shapes\\Circle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T20:07:53.317Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IGetPerimeter.cs",
-              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IGetPerimeter.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IGetPerimeter.cs",
-              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IGetPerimeter.cs",
-              "RelativeToolTip": "Interfaces\\IGetPerimeter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Title": "ICalculateArea.cs",
+              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\ICalculateArea.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ICalculateArea.cs",
+              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\ICalculateArea.cs",
+              "RelativeToolTip": "Interfaces\\ICalculateArea.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:28:54.188Z",
+              "WhenOpened": "2024-12-17T19:40:52.345Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
@@ -93,79 +123,66 @@
               "RelativeDocumentMoniker": "Shapes\\Triangle.cs",
               "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Triangle.cs",
               "RelativeToolTip": "Shapes\\Triangle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T21:44:42.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T21:27:06.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "ProgramHelpers.cs",
               "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\ProgramHelpers.cs",
               "RelativeDocumentMoniker": "ProgramHelpers.cs",
               "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\ProgramHelpers.cs",
               "RelativeToolTip": "ProgramHelpers.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAACIAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T17:56:48.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Square.cs",
-              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Square.cs",
-              "RelativeDocumentMoniker": "Shapes\\Square.cs",
-              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Square.cs",
-              "RelativeToolTip": "Shapes\\Square.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T15:16:54.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IChangeShapes.cs",
-              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IChangeShapes.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IChangeShapes.cs",
-              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IChangeShapes.cs",
-              "RelativeToolTip": "Interfaces\\IChangeShapes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:43:43.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ShapeBase.cs",
               "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Bases\\ShapeBase.cs",
               "RelativeDocumentMoniker": "Bases\\ShapeBase.cs",
               "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Bases\\ShapeBase.cs",
               "RelativeToolTip": "Bases\\ShapeBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T15:28:51.612Z",
+              "WhenOpened": "2024-12-17T20:04:18.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "SpecialShapeBase.cs",
+              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Bases\\SpecialShapeBase.cs",
+              "RelativeDocumentMoniker": "Bases\\SpecialShapeBase.cs",
+              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Bases\\SpecialShapeBase.cs",
+              "RelativeToolTip": "Bases\\SpecialShapeBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T14:29:22.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Rectangle.cs",
               "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Rectangle.cs",
               "RelativeDocumentMoniker": "Shapes\\Rectangle.cs",
@@ -178,32 +195,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SpecialShapeBase.cs",
-              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Bases\\SpecialShapeBase.cs",
-              "RelativeDocumentMoniker": "Bases\\SpecialShapeBase.cs",
-              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Bases\\SpecialShapeBase.cs",
-              "RelativeToolTip": "Bases\\SpecialShapeBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:29:22.903Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Circle.cs",
-              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Circle.cs",
-              "RelativeDocumentMoniker": "Shapes\\Circle.cs",
-              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Shapes\\Circle.cs",
-              "RelativeToolTip": "Shapes\\Circle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Title": "IChangeShapes.cs",
+              "DocumentMoniker": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IChangeShapes.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IChangeShapes.cs",
+              "ToolTip": "C:\\Users\\rasante\\source\\repos\\ShapesRFun\\Interfaces\\IChangeShapes.cs",
+              "RelativeToolTip": "Interfaces\\IChangeShapes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T15:13:30.381Z"
+              "WhenOpened": "2024-12-13T14:43:43.225Z",
+              "EditorCaption": ""
             }
           ]
         }
