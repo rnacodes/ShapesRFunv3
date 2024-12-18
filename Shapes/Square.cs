@@ -5,7 +5,7 @@ using ShapesRFun.Interfaces;
 //This class that inherits from the ShapeBase class and IChangeShapes interface
 //ShapeBase class gives the Square class the the Dimension property and the GetArea method
 //Square implements the IChangeShapes interface and inherits the DoubleArea and HalveArea methods
-internal class Square : ShapeBase, IChangeShapes
+public class Square : ShapeBase, IChangeShapes
 {
     //Inherited from the ShapeBase class
     public override int GetArea()
