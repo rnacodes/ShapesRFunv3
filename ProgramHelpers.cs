@@ -42,12 +42,37 @@ public class ProgramHelpers
             return area;
         }
 
+    /// //ADD IN SHAPE JOKE LATER <summary>
+    /*
 
+    public static string TellShapeJoke(string shapeToBuild)
+    {
+        string joke = "";
+        switch (shapeToBuild)
+        {
+            case "square":
+                Square squareJoke = new Square();
+                joke = squareJoke.SquareSpecial();
+                break;
+            case "triangle":
+                Triangle triangleJoke = new Triangle();
+                triangleJoke.TriangleSpecial();
+                break;
+            default:
+                Console.WriteLine("I'm sorry, those shapes aren't very funny.");
+                break;
+        }
+        return joke;
+    }
+    */
+
+    /*
     //This method adds the areas of two shapes together
     public static int AddShapes(int area, int secondShapeArea)
     {
         return Convert.ToInt32(area) + Convert.ToInt32(secondShapeArea);
     }
+    */
 }
 
 
