@@ -18,9 +18,9 @@ internal class Program
         shapeToBuild = shapeToBuild.ToLower();
 
         //Ask user for first dimension of shape 
-        //For simple shapes - shapeSize1 is length for square and radius for circle
+        //For simple shapes - secondShapeSize2 is length for square and radius for circle
         //For simplification purposes, these are treated as a single dimension without a unit of measurement
-        //If a number can be found in input, it is assigned to the variable shapeSize1
+        //If a number can be found in input, it is assigned to the variable secondShapeSize2
         Console.WriteLine("Thank you for choosing a " + shapeToBuild + "! What size would you like the shape to be?");
 
         int shapeSize1 = int.Parse(Console.ReadLine());
@@ -42,13 +42,18 @@ internal class Program
 
         Console.WriteLine("Calculating.....................");
 
-        if (shapeToBuild == "rectangle" || shapeToBuild == "circle")
+        if (shapeToBuild == "square" || shapeToBuild == "circle")
+        {
+            area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1);
+            //Environment.Exit(0);
+        } else
         {
             area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1, shapeSize2);
-        } else
-            area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1);
-
+        }
         Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
+
+
+
         Thread.Sleep(500);
 
         Console.WriteLine("Would you like to add another shape to this one? If so, please enter another.");
@@ -62,17 +67,19 @@ internal class Program
 
         Console.WriteLine("For Shape Number 2: What is the first dimension of the " + secondShapeToBuild + "?");
 
-        shapeSize1 = int.Parse(Console.ReadLine());
+        secondShapeSize1 = int.Parse(Console.ReadLine());
 
         if (secondShapeToBuild == "rectangle" || secondShapeToBuild == "triangle")
         {
             Console.WriteLine("What is the second dimension of the " + secondShapeToBuild + "?");
-            shapeSize2 = int.Parse(Console.ReadLine());
+            secondShapeSize2 = int.Parse(Console.ReadLine());
             secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1, secondShapeSize2);
         } else
         {
             secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1);
         }
+
+        //area = ProgramHelpers.CreateShape(shapeToBuild, secondShapeSize2);
 
         AddShapes addShapesInstantiation = new();
         combinedShapeArea = addShapesInstantiation.AddShapesHere(area, secondShapeArea);

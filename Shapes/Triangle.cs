@@ -4,7 +4,7 @@ internal class Triangle : SpecialShapeBase
 {
     public override int GetArea()
     {
-        return (int)(Dimension * Dimension2)/2;
+        return (int)Math.Round((Dimension * Dimension2)/2.0);
     }
 
     public void TriangleSpecial ()

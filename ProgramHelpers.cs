@@ -33,7 +33,14 @@ public class ProgramHelpers
                 rectangleShape.Dimension = shapeSize;
                 rectangleShape.Dimension2 = shapeSize2;
                 area = rectangleShape.GetArea();
-                rectangleShape.GimmeNumber();
+                //rectangleShape.GimmeNumber();
+                break;
+            case "triangle":
+                Triangle triangleShape = new Triangle();
+                triangleShape.Dimension = shapeSize;
+                triangleShape.Dimension2 = shapeSize2;
+                area = triangleShape.GetArea();
+                //triangleShape.TriangleSpecial();
                 break;
             default:
                 Console.WriteLine("That shape will be available in a future expansion pack!");
