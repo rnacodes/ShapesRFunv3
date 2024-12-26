@@ -5,26 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ShapesRFun.Bases;
 using ShapesRFun.Interfaces;
+
+//AddShapes class is a helper class that adds the areas of two shapes together
 public class AddShapes
 {
     public int AddShapesHere(int shape1Area, int shape2Area)
     {
         return shape1Area + shape2Area;
     }
-
-
-    /*
-        public int AddShapesHere(ShapeBase shapeToAdd1, ShapeBase shapeToAdd2)
-        {
-            return shapeToAdd1.GetArea() + shapeToAdd2.GetArea();
-        }
-    */
-
-    /*
-    public override int GetArea()
-    {
-        throw new NotImplementedException();
-    }
-    */
 }
 

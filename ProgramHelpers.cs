@@ -17,25 +17,25 @@ public class ProgramHelpers
 
         switch (shapeToBuild)
         {
-            case "circle":
+            case "circle": //Circle is regular shape
                 Circle circleShape = new Circle();
                 circleShape.Dimension = shapeSize;
                 area = circleShape.GetArea();
                 break;
-            case "square":
+            case "square": //Square is regular shape
                 Square squareShape = new Square();
                 squareShape.Dimension = shapeSize;
                 area = squareShape.GetArea();
                 //squareShape.GetPerimeter();
                 break;
-            case "rectangle":
+            case "rectangle": //Rectangle is complex shape
                 Rectangle rectangleShape = new Rectangle();
                 rectangleShape.Dimension = shapeSize;
                 rectangleShape.Dimension2 = shapeSize2;
                 area = rectangleShape.GetArea();
                 //rectangleShape.GimmeNumber();
                 break;
-            case "triangle":
+            case "triangle": //Triangle is complex shape
                 Triangle triangleShape = new Triangle();
                 triangleShape.Dimension = shapeSize;
                 triangleShape.Dimension2 = shapeSize2;

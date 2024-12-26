@@ -38,8 +38,6 @@ public class Square : ShapeBase, IChangeShapes
         Console.WriteLine("What is a square's favorite song? Hip to be Square!");
 
     }
-
-
 }
 
 

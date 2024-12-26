@@ -1,6 +1,10 @@
 ﻿using ShapesRFun.Bases;
+//Circle - simple shape
+//Inherits from ShapeBase class
+//Has dimension property and ability to calculate area from the ShapeBase class
+//Has special GetPerimeter class unique to its own class
 
-internal class Circle : SpecialShapeBase
+public class Circle : ShapeBase
 {
     public override int GetArea()
     {
