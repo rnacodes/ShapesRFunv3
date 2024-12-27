@@ -31,6 +31,7 @@ internal class Program
                 }
                 break;
             }
+
             catch (InvalidInputException ex)
             {
                 Console.WriteLine(ex.Message);
@@ -45,33 +46,40 @@ internal class Program
 
         while (true)
         {
-            try
+          try
             {
                 shapeSize1 = int.Parse(Console.ReadLine());
-            };
-            break;
-            /*
-            catch ()
-            {
-
+                break;
             }
-            */
+            
+          catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid number.");
+            }
         } //Closes the second while loop
 
 
-        
+
 
         //This sets up the program to handle more complex shapes with two dimensions
         //The second dimension is height for rectangle and base for triangle
         //Triangle is assumed to be equilateral or isoceles
-        
+        Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
 
         if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
         {
-            Console.WriteLine("What is the second dimension of the " + shapeToBuild +"?");
-            shapeSize2 = int.Parse(Console.ReadLine());
+            while (true) {
+                try {
+                    shapeSize2 = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
+            }
         }
-
+        
         Console.WriteLine("Thank you! I will now calculate the area of the shape.");
 
         Thread.Sleep(500);
@@ -81,7 +89,6 @@ internal class Program
         if (shapeToBuild == "square" || shapeToBuild == "circle")
         {
             area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1);
-            //Environment.Exit(0);
         } else
         {
             area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1, shapeSize2);
@@ -94,6 +101,8 @@ internal class Program
 
         string secondShapeToBuild = Console.ReadLine();
         secondShapeToBuild = secondShapeToBuild.ToLower();
+
+        //Initialize variables for second shape
         int secondShapeSize1 = 0;
         int secondShapeSize2 = 0;
         int secondShapeArea = 0;
@@ -101,12 +110,32 @@ internal class Program
 
         Console.WriteLine("For Shape Number 2: What is the first dimension of the " + secondShapeToBuild + "?");
 
-        secondShapeSize1 = int.Parse(Console.ReadLine());
+        
+        while (true)
+        {
+            try
+            {
+                secondShapeSize1 = int.Parse(Console.ReadLine());
+                break;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid number.");
+            }
+        }
 
         if (secondShapeToBuild == "rectangle" || secondShapeToBuild == "triangle")
         {
             Console.WriteLine("What is the second dimension of the " + secondShapeToBuild + "?");
-            secondShapeSize2 = int.Parse(Console.ReadLine());
+
+            try
+            {
+                secondShapeSize2 = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid number.");
+            }
             secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1, secondShapeSize2);
         } else
         {
@@ -121,7 +150,12 @@ internal class Program
 
         Console.WriteLine("The combined area of the two shapes is " + combinedShapeArea + ".");
 
-        
+        Thread.Sleep(500);
+        Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
+        string funTrickResponse = Console.ReadLine();
+        funTrickResponse = funTrickResponse.ToLower();
+        ProgramHelpers.DoFunTrick(funTrickResponse);
+        //if
 
         /*
         Console.WriteLine("Would you like to hear a joke about your first shape?");

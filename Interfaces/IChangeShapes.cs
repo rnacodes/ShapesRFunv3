@@ -10,5 +10,4 @@ namespace ShapesRFun.Interfaces;
         int DoubleArea();
 
         int HalveArea();
-
     }

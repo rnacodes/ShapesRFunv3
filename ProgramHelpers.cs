@@ -33,14 +33,14 @@ public class ProgramHelpers
                 rectangleShape.Dimension = shapeSize;
                 rectangleShape.Dimension2 = shapeSize2;
                 area = rectangleShape.GetArea();
-                //rectangleShape.GimmeNumber();
+                
                 break;
             case "triangle": //Triangle is complex shape
                 Triangle triangleShape = new Triangle();
                 triangleShape.Dimension = shapeSize;
                 triangleShape.Dimension2 = shapeSize2;
                 area = triangleShape.GetArea();
-                //triangleShape.TriangleSpecial();
+                
                 break;
             default:
                 Console.WriteLine("That shape will be available in a future expansion pack!");
@@ -48,6 +48,23 @@ public class ProgramHelpers
         }
             return area;
         }
+    public static void DoFunTrick(string funTrickResponse)
+    {
+        switch (funTrickResponse)
+        {
+            case "no":
+                Console.WriteLine("You're not very much fun at parties, are you?");
+                break;
+            case "triangle":
+                Triangle triangleJoke = new Triangle();
+                triangleJoke.TriangleSpecial();
+                break;
+            case "rectangle":
+                Rectangle rectangleJoke = new Rectangle();
+                Console.WriteLine(rectangleJoke.RectangleMagicNumber());
+                break;
+        }
+    }
 
     /// //ADD IN SHAPE JOKE LATER <summary>
     /*

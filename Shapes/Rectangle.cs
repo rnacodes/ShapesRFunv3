@@ -9,9 +9,9 @@ public class Rectangle : SpecialShapeBase, IChangeShapes
         return Dimension * Dimension2;
     }
 
-    internal int GimmeNumber()
+    public string RectangleMagicNumber()
     {
-        return 42;
+        return "The answer to all questions is 42.";
     }
 
     public int DoubleArea()
