@@ -1,4 +1,4 @@
-# ShapeMaker project
+# ShapeMaker Project
 This project includes both the ShapeMaker program and the ShapeMaker unit tests
 
 ## ShapeMaker App
@@ -61,8 +61,13 @@ Classes:
 * AddShapes: this class contains a method that takes the area of two shapes and returns the result of both combined.
 
 Program helpers:
-* CreateShape method: contains switch statement that creates a shape based on user input
-* DoFunTrick: user can choose one of the special abilities each shape has.
+* CreateShape method: contains switch statement that creates a shape based on user input for shape dimensions.
+* DoFunTrick: user can choose one of the special abilities each shape has:
+	* Triangle: tells a joke using a static method, which also prints to console.
+	* Rectangle: uses a static method to display a joke which is then separately printed to the console.
+	* Circle: chooses a random number as a dimension for a circle. Creates the shape and then displays the perimeter.
+	Square: creates a square using a random number, then applies the HalveArea and DoubleArea methods.
+	* Entering "no" displays a funny message
 
 Program itself:
 * Initializes variables for first shape
@@ -87,9 +92,35 @@ Program itself:
 - Special stuff for shape-specific methods
 - Validating user input for second half of program
 - Creating tests for desired user input and incorrect user input
+- Ensuring that error is thrown for invalid input as needed.
 - Test for fun trick responses
 
 //Ideas for improvement
 * Is there any code on the program file that can be modulated into resuable methods? Specifically the try/catch loops.
 
 ## Shapemaker Tests
+
+### Overall structure of xUnit tests
+* The shape-based tests create an object using specified properties.
+* The expected calculation is also given
+* A method is called that performs on the object
+* The expected and actual results of the test are compared
+
+### Square Tests Part One - based in xUnit
+These unit tests confirm that methods in the Square shape class function as expected.
+
+* SquareAreaTest1 - lays out a specified dimension size and expected area
+	* Creates a Square object with this property
+	* The GetArea method is called 
+	* The actual result of the GetArea method is measured against what the expected value should be	
+* SquareDoubleAreaTest1 - functions the same as above, but instead calls the DoubleArea method
+
+### Circle Tests Part One - based in xUnit
+* CircleAreaTest1 - tests GetArea method on instantiations of Circle shape
+* CirclePerimeterTest1 - tests circle-specific GetPerimeter method
+
+### AddShapesTest1 - based in xUnit
+* AddShapesHereTest - provides area for two shapes. Tests addShapes method on these two values.
+
+### AddShapesTest2 - uses Moq to test AddShapes helper class
+AddShapesHere_AddTwoSimpleShapes - creates two simple mock shapes

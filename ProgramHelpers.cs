@@ -75,6 +75,18 @@ public class ProgramHelpers
                 perimeterNumber = circleFun.GetPerimeter();
                 Console.WriteLine("The perimeter of a circle with a radius of " + circleFun.Dimension + " is " + perimeterNumber + ".");
                 break;
+            case "square":
+                Square squareFun = new Square();
+                squareFun.Dimension = GetRando();
+                int squareFunArea = squareFun.GetArea();
+                Console.WriteLine("I change shapes just to hide in this place. I can perform magic on a square with the area of " + squareFunArea);
+                Thread.Sleep(500);
+                Console.WriteLine("Contemplating.....................");
+                Thread.Sleep(500);
+                int halfArea = squareFun.HalveArea();
+                int doubleArea = squareFun.DoubleArea();
+                Console.WriteLine("The double area of the square is " + doubleArea + " and the half area of the square is " + halfArea + ".");
+                break;
         }
     }
 
