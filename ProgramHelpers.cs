@@ -56,16 +56,34 @@ public class ProgramHelpers
                 Console.WriteLine("You're not very much fun at parties, are you?");
                 break;
             case "triangle":
-                Triangle triangleJoke = new Triangle();
-                triangleJoke.TriangleSpecial();
+                //Triangle triangleJoke = new Triangle();
+                Triangle.TriangleSpecial();
                 break;
             case "rectangle":
-                Rectangle rectangleJoke = new Rectangle();
-                Console.WriteLine(rectangleJoke.RectangleMagicNumber());
+                //Rectangle rectangleJoke = new Rectangle();
+                string rectangleFun = Rectangle.RectangleMagicNumber();
+                Console.WriteLine(rectangleFun);
+                break;
+            case "circle":
+                int perimeterNumber;
+                Console.WriteLine("I can calculate perimeter for you. I'll pick a random size and calculate the perimeter.");
+                Circle circleFun = new Circle();
+                circleFun.Dimension = GetRando();
+                Thread.Sleep(500);
+                Console.WriteLine("Thinking.....................");
+                Thread.Sleep(500);
+                perimeterNumber = circleFun.GetPerimeter();
+                Console.WriteLine("The perimeter of a circle with a radius of " + circleFun.Dimension + " is " + perimeterNumber + ".");
                 break;
         }
     }
 
+    //Generates a random number between 1 and 20
+    public static int GetRando()
+    {
+        Random rando = new Random();
+        return rando.Next(1, 21);
+    }
     /// //ADD IN SHAPE JOKE LATER <summary>
     /*
 
@@ -90,13 +108,6 @@ public class ProgramHelpers
     }
     */
 
-    /*
-    //This method adds the areas of two shapes together
-    public static int AddShapes(int area, int secondShapeArea)
-    {
-        return Convert.ToInt32(area) + Convert.ToInt32(secondShapeArea);
-    }
-    */
 }
 
 

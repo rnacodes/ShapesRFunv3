@@ -1,3 +1,6 @@
+# ShapeMaker project
+This project includes both the ShapeMaker program and the ShapeMaker unit tests
+
 ## ShapeMaker App
 
 The basic functionality of the ShapeMaker app is to present the user with a series of questions that allows the program to create a shape with user-defined parameters. The goal of this project is to demonstrate the use of classes, class inheritance, interfaces, and testing. This project has also been a great example of using the DRY method and iterating and optimizing to improve the code as I add functionality.
@@ -35,7 +38,8 @@ Shapes: these are the classes that define the available shapes that users can re
 * Circle: basic shape that inherits from ShapeBase
 	* Contains Dimension property, inherited from ShapeBase 
 	* GetArea is implemented from the ICalculateArea interface, which ShapeBase implements - here, the formula for the method is defined.
-	* Contains a Circle-specific "GetPerimeter" method - IN PROGRESS
+	* Contains a Circle-specific "GetPerimeter" method 
+		* When a circle is chosen in the final user prompt, the program calculates a random number and uses this as Dimension1 of a circle. This is then used to calculate Perimeter.
 * Square: basic shape that inherits from ShapeBase
 	* Contains Dimension property, inherited from ShapeBase
 	* GetArea is implemented from the ICalculateArea interface, which ShapeBase implements - this shape also defines its own GetArea method
@@ -58,25 +62,34 @@ Classes:
 
 Program helpers:
 * CreateShape method: contains switch statement that creates a shape based on user input
+* DoFunTrick: user can choose one of the special abilities each shape has.
 
 Program itself:
 * Initializes variables for first shape
 * While loop - console asks user which shape to build
-	* IN PROGRESS: uses try/catch to validate user input or throw an error
-* Console asks user for size of shape (Dimension1)
-	* IN PROGRESS
-* If special shapes rectangle or triangle are requested, console asks for second Dimension
+	* try/catch loop: Error is thrown if input other than a valid shape is enteredm asking for valid shape
+	* Once valid shape is entered, the user's input is converted to lowercase
+* Second while loop - console asks user for 1st dimension of 1st shape
+	* User's input is validated for a valid number and error is thrown otherwise, and user is asked for valid number.
+* The next part depends on which shape is chosen.
+	* If a shape with two dimensions is chosen, the user is prompted for a second dimension. This structure follows the same as when the user is asked for the first dimension.
 * Console prints messages about calculating area
 * ProgramHelpers.CreateShape create a shape based on user input
-* Asks user if they want to add a second shape to the first
-* If user wants to build second shape, program asks for input as above
+* Second shape - asks user if they want to add a second shape to the first
+	* If user wants to build second shape, program asks for input and validates it the same as the first shape
 * Program builds second shape
 * Area for Shape2 is calculated
 * Areas for both shapes are added together
 * Console prints result of added areas
+* Fun trick - each of the shapes has its own built in fun method or property. I did these to test out how different methods, properties and return types function both when used and in testing.
 
 //IN PROGRESS
 - Special stuff for shape-specific methods
-- Validating user input
+- Validating user input for second half of program
 - Creating tests for desired user input and incorrect user input
+- Test for fun trick responses
 
+//Ideas for improvement
+* Is there any code on the program file that can be modulated into resuable methods? Specifically the try/catch loops.
+
+## Shapemaker Tests

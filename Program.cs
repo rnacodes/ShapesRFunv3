@@ -58,16 +58,13 @@ internal class Program
             }
         } //Closes the second while loop
 
-
-
-
         //This sets up the program to handle more complex shapes with two dimensions
         //The second dimension is height for rectangle and base for triangle
         //Triangle is assumed to be equilateral or isoceles
-        Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
 
-        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
+        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")        
         {
+            Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
             while (true) {
                 try {
                     shapeSize2 = int.Parse(Console.ReadLine());
@@ -97,7 +94,7 @@ internal class Program
 
         Thread.Sleep(500);
 
-        Console.WriteLine("Would you like to add another shape to this one? If so, please enter another.");
+        Console.WriteLine("Would you like to add another shape to this one? If so, please enter another shape.");
 
         string secondShapeToBuild = Console.ReadLine();
         secondShapeToBuild = secondShapeToBuild.ToLower();
@@ -107,6 +104,8 @@ internal class Program
         int secondShapeSize2 = 0;
         int secondShapeArea = 0;
         int combinedShapeArea = 0;
+
+
 
         Console.WriteLine("For Shape Number 2: What is the first dimension of the " + secondShapeToBuild + "?");
 
@@ -142,6 +141,7 @@ internal class Program
             secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1);
         }
 
+        //Instantiation of AddShapes class to add the area of two shapes together
         AddShapes addShapesInstantiation = new();
         combinedShapeArea = addShapesInstantiation.AddShapesHere(area, secondShapeArea);
 
@@ -151,10 +151,27 @@ internal class Program
         Console.WriteLine("The combined area of the two shapes is " + combinedShapeArea + ".");
 
         Thread.Sleep(500);
+
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
+        while (true) { 
+            try
+            {
+                string funTrickResponse = Console.ReadLine();
+                funTrickResponse = funTrickResponse.ToLower();
+                ProgramHelpers.DoFunTrick(funTrickResponse);
+                break;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid shape.");
+            }
+        }
+        
+        /*
         string funTrickResponse = Console.ReadLine();
         funTrickResponse = funTrickResponse.ToLower();
         ProgramHelpers.DoFunTrick(funTrickResponse);
+        */
         //if
 
         /*

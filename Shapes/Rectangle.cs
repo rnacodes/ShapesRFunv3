@@ -9,7 +9,7 @@ public class Rectangle : SpecialShapeBase, IChangeShapes
         return Dimension * Dimension2;
     }
 
-    public string RectangleMagicNumber()
+    public static string RectangleMagicNumber()
     {
         return "The answer to all questions is 42.";
     }

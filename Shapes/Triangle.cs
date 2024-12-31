@@ -7,7 +7,7 @@ internal class Triangle : SpecialShapeBase
         return (int)Math.Round((Dimension * Dimension2)/2.0);
     }
 
-    public void TriangleSpecial ()
+    public static void TriangleSpecial ()
     {
         Console.WriteLine("What is a triangle’s favorite newspaper? The HypotoNews!");
     }
