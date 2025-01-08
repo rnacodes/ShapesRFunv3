@@ -33,13 +33,11 @@ public class Square : ShapeBase, IChangeShapes
         return Dimension * Dimension;
     }
 
-    /* Commenting this out to prevent myself from getting confused for which shapes have which unique methods
-    public static void SquareSpecial()
+ //This method is only used for testing purposes
+    public static string SquareSpecial()
     {
-        Console.WriteLine("What is a square's favorite song? Hip to be Square!");
-
+        return "What is a square's favorite song? Hip to be Square!";
     }
-    */
 }
 
 

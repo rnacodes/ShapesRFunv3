@@ -94,14 +94,13 @@ Shapes are divided into two categories: "Simple" shapes that contain only one us
 //IN PROGRESS
 - Creating tests for desired user input and incorrect user input
 - Ensuring that error is thrown for invalid input as needed.
-- Test for fun trick responses
 
 //Ideas for improvement
 * DRY principle - Is there any code on the program file that can be modulated into resuable methods? Specifically the try/catch loops.
 
 ## Shapemaker Tests
 
-### Overall structure of xUnit tests
+### Overall structure of xUnit tests for Shape instantiation, and testing the GetArea and HalveArea and DoubleArea
 * The shape-based tests create an object using specified properties.
 * The expected calculation is also given
 * A method is called that performs on the object
