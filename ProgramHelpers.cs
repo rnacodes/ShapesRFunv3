@@ -7,8 +7,7 @@ namespace ShapesRFun;
 //These are methods needed for the program to run, but are separated from the UI
 public class ProgramHelpers
     {
-
-    //CreateShape creates a shape based on the dimensions provided by the user.
+    //CreateShape creates a shape based on the dimensions provided by the user and performs method to calculate area for that shape.
     //The method can take three arguments: the shape to build, the first dimension, and the second dimension
     //For the more complex shapes, the second dimension is required
     public static int CreateShape(string shapeToBuild, int shapeSize, int shapeSize2 = 0)
@@ -17,12 +16,12 @@ public class ProgramHelpers
 
         switch (shapeToBuild)
         {
-            case "circle": //Circle is regular shape
+            case "circle": //Circle is simple shape
                 Circle circleShape = new Circle();
                 circleShape.Dimension = shapeSize;
                 area = circleShape.GetArea();
                 break;
-            case "square": //Square is regular shape
+            case "square": //Square is simple shape
                 Square squareShape = new Square();
                 squareShape.Dimension = shapeSize;
                 area = squareShape.GetArea();
@@ -33,14 +32,12 @@ public class ProgramHelpers
                 rectangleShape.Dimension = shapeSize;
                 rectangleShape.Dimension2 = shapeSize2;
                 area = rectangleShape.GetArea();
-                
                 break;
             case "triangle": //Triangle is complex shape
                 Triangle triangleShape = new Triangle();
                 triangleShape.Dimension = shapeSize;
                 triangleShape.Dimension2 = shapeSize2;
                 area = triangleShape.GetArea();
-                
                 break;
             default:
                 Console.WriteLine("That shape will be available in a future expansion pack!");
@@ -56,11 +53,9 @@ public class ProgramHelpers
                 Console.WriteLine("You're not very much fun at parties, are you?");
                 break;
             case "triangle":
-                //Triangle triangleJoke = new Triangle();
                 Triangle.TriangleSpecial();
                 break;
             case "rectangle":
-                //Rectangle rectangleJoke = new Rectangle();
                 string rectangleFun = Rectangle.RectangleMagicNumber();
                 Console.WriteLine(rectangleFun);
                 break;
@@ -96,30 +91,6 @@ public class ProgramHelpers
         Random rando = new Random();
         return rando.Next(1, 21);
     }
-    /// //ADD IN SHAPE JOKE LATER <summary>
-    /*
-
-    public static string TellShapeJoke(string shapeToBuild)
-    {
-        string joke = "";
-        switch (shapeToBuild)
-        {
-            case "square":
-                Square squareJoke = new Square();
-                joke = squareJoke.SquareSpecial();
-                break;
-            case "triangle":
-                Triangle triangleJoke = new Triangle();
-                triangleJoke.TriangleSpecial();
-                break;
-            default:
-                Console.WriteLine("I'm sorry, those shapes aren't very funny.");
-                break;
-        }
-        return joke;
-    }
-    */
-
 }
 
 

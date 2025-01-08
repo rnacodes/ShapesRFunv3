@@ -13,8 +13,6 @@ internal class Program
 
         Console.WriteLine("Welcome to the shape builder! Which shape can I make for you today?");
 
-        //ADD in try/catch for null input
-
         //Ask user for shape to build -> converted to lowercase for standardization
 
         //Validate input
@@ -36,7 +34,7 @@ internal class Program
             {
                 Console.WriteLine(ex.Message);
             }
-        } //This closes the first while loop
+        }
 
         //Ask user for first dimension of shape 
         //For simple shapes - secondShapeSize2 is length for square and radius for circle
@@ -56,7 +54,7 @@ internal class Program
             {
                 Console.WriteLine("Please enter a valid number.");
             }
-        } //Closes the second while loop
+        }
 
         //This sets up the program to handle more complex shapes with two dimensions
         //The second dimension is height for rectangle and base for triangle
@@ -104,8 +102,6 @@ internal class Program
         int secondShapeSize2 = 0;
         int secondShapeArea = 0;
         int combinedShapeArea = 0;
-
-
 
         Console.WriteLine("For Shape Number 2: What is the first dimension of the " + secondShapeToBuild + "?");
 
@@ -166,28 +162,5 @@ internal class Program
                 Console.WriteLine("Please enter a valid shape.");
             }
         }
-        
-        /*
-        string funTrickResponse = Console.ReadLine();
-        funTrickResponse = funTrickResponse.ToLower();
-        ProgramHelpers.DoFunTrick(funTrickResponse);
-        */
-        //if
-
-        /*
-        Console.WriteLine("Would you like to hear a joke about your first shape?");
-        string jokeAnswer = Console.ReadLine();
-        ProgramHelpers.TellShapeJoke(shapeToBuild);
-        */
-
-        // string jokeShape = Console.ReadLine();
-        // jokeShape = jokeShape.ToLower();
-
-        //Console.WriteLine("What is the name of the shape you would like a joke for?");
-
-
-
-
     }
-
 }

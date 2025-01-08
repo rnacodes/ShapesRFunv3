@@ -2,7 +2,7 @@
 //Circle - simple shape
 //Inherits from ShapeBase class
 //Has dimension property and ability to calculate area from the ShapeBase class
-//Has special GetPerimeter class unique to its own class
+//Has special GetPerimeter method unique to its own class
 
 public class Circle : ShapeBase
 {
