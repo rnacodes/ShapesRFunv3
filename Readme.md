@@ -74,6 +74,7 @@ Shapes are divided into two categories: "Simple" shapes that contain only one us
 
 ### Shapemaker Program:
 * Initializes variables for first shape
+**Area of first shape**
 * Console asks user which shape to build
 	* try/catch loop: Error is thrown if input other than a valid shape is entered, asking user for valid shape
 	* Once valid shape is entered, the user's input is converted to lowercase
@@ -82,45 +83,76 @@ Shapes are divided into two categories: "Simple" shapes that contain only one us
 	* If a shape with two dimensions is chosen, the user is prompted for a second dimension. This structure follows the same as when the user is asked for the first dimension.
 * ProgramHelpers.CreateShape creates a shape based on user input
 * Console prints message with calculated area
+**Area of second shape**
 * Console asks user if they want to add a second shape to the first
+	* If user enters "No," the program then jumps to the Fun Trick.
 	* If user wants to build second shape, program asks for input for shape and dimensions and validates it the same as the first shape
 * Program builds second shape
 * Area for Shape2 is calculated
 * Instantiation of the AddShapes class is created, which takes the areas of both shapes as arguments
 * Areas for both shapes are added together
 * Console prints result of added areas
+**Fun Shape Tricks**
 * Console then asks user if they would like to see a fun trick. Each of the shapes has its own unique method or property that can be accessed by typing in the name of the shape. I did these to test out how different methods, properties and return types function both when used and in testing
 
-//IN PROGRESS
-- Creating tests for desired user input and incorrect user input
-- Ensuring that error is thrown for invalid input as needed.
-
 //Ideas for improvement
-* DRY principle - Is there any code on the program file that can be modulated into resuable methods? Specifically the try/catch loops.
+- Add tests for Triangle and remaining Rectangle methods
+- Ensuring that error is thrown for invalid input as needed
+- Creating tests for desired user input and incorrect user input for all dialogue options
+- DRY principle - Is there any code on the program file that can be modulated into resuable methods? Specifically the try/catch loops
+
 
 ## Shapemaker Tests
 
-### Overall structure of xUnit tests for Shape instantiation, and testing the GetArea and HalveArea and DoubleArea
-* The shape-based tests create an object using specified properties.
+### Add Shapes - tests AddShapes helper class
+
+**AddShapesTest1 - xUnit**
+* AddShapesHereTest - provides area for two shapes. Tests addShapes method on these two values
+* Arrange: Two shape areas and their combined value are provided
+* Act: AddShapes is instantiated and calls the AddShapesHereMethod
+* Assert: Expected value and actual value are compared
+
+**AddShapesTest2 - Moq**
+AddShapesHere_AddTwoSimpleShapes - creates two simple mock shape classes
+* Arrange: create instantiations of mock shapes with specified areas
+setting up the mock shapes and class to add their areas
+* Act?: Calculate the area of the mocked shapes, create instantiation of AddShapes class
+* Assert: Compare expected area with actually calculated area
+
+### Overall structure of tests for Shape instantiation
+* The shape-based tests create an object using specified properties
 * The expected calculation is also given
 * A method is called that performs on the object
 * The expected and actual results of the test are compared
 
-### Square Tests Part One - based in xUnit
+### Circle Tests
+**xUnit**
+GetArea test
+Perimeter test
+
+**Moq tests coming soon!**
+
+### ShapesFunTricks Test
+Tests for each fun methods special to each shape class are created using xUnit as they are static methods
+* RectangleMagicNumber
+* SquareSpecial - this test won't set up properly
+
+### Square Tests
 These unit tests confirm that methods in the Square shape class function as expected.
 
+**xUnit Tests**
 * SquareAreaTest1 - lays out a specified dimension size and expected area
 	* Creates a Square object with this property
 	* The GetArea method is called 
 	* The actual result of the GetArea method is measured against what the expected value should be	
-* SquareDoubleAreaTest1 - functions the same as above, but instead calls the DoubleArea method
+* SquareDoubleAreaTest1
+* SquareHalveAreaTest1
 
-### Circle Tests Part One - based in xUnit
-* CircleAreaTest1 - tests GetArea method on instantiations of Circle shape
-* CirclePerimeterTest1 - tests circle-specific GetPerimeter method
+**Moq Tests**
+* SquareAreaTest2
+* SquareDoubleAreaTest2
+* SquareHalveAreaTest2
 
-### AddShapesTest1 - based in xUnit
-* AddShapesHereTest - provides area for two shapes. Tests addShapes method on these two values.
+### User input - Moq
+* Invalid input for first shape request
 
-### AddShapesTest2 - uses Moq to test AddShapes helper class
-AddShapesHere_AddTwoSimpleShapes - creates two simple mock shapes

@@ -44,13 +44,13 @@ internal class Program
 
         while (true)
         {
-          try
+            try
             {
                 shapeSize1 = int.Parse(Console.ReadLine());
                 break;
             }
-            
-          catch (FormatException)
+
+            catch (FormatException)
             {
                 Console.WriteLine("Please enter a valid number.");
             }
@@ -60,7 +60,7 @@ internal class Program
         //The second dimension is height for rectangle and base for triangle
         //Triangle is assumed to be equilateral or isoceles
 
-        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")        
+        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
         {
             Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
             while (true) {
@@ -74,7 +74,7 @@ internal class Program
                 }
             }
         }
-        
+
         Console.WriteLine("Thank you! I will now calculate the area of the shape.");
 
         Thread.Sleep(500);
@@ -92,7 +92,15 @@ internal class Program
 
         Thread.Sleep(500);
 
-        Console.WriteLine("Would you like to add another shape to this one? If so, please enter another shape.");
+        Console.WriteLine("Would you like to add another shape to this one? If so, please enter another shape. Otherwise enter 'No.'");
+        string secondShapeAnswer = Console.ReadLine();
+        secondShapeAnswer = secondShapeAnswer.ToLower();
+
+        if (secondShapeAnswer == "no")
+        {
+            ShowFunTrick();
+            return;
+        }
 
         string secondShapeToBuild = Console.ReadLine();
         secondShapeToBuild = secondShapeToBuild.ToLower();
@@ -105,7 +113,7 @@ internal class Program
 
         Console.WriteLine("For Shape Number 2: What is the first dimension of the " + secondShapeToBuild + "?");
 
-        
+
         while (true)
         {
             try
@@ -147,9 +155,13 @@ internal class Program
         Console.WriteLine("The combined area of the two shapes is " + combinedShapeArea + ".");
 
         Thread.Sleep(500);
-
+    }
+    
+private static void ShowFunTrick()
+    {
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
-        while (true) { 
+        while (true)
+        {
             try
             {
                 string funTrickResponse = Console.ReadLine();
@@ -163,4 +175,5 @@ internal class Program
             }
         }
     }
-}
+    }
+
