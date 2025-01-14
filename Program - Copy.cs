@@ -1,4 +1,5 @@
-﻿using ShapesRFun.Bases;
+﻿/*
+using ShapesRFun.Bases;
 
 namespace ShapesRFun;
 internal class Program
@@ -6,45 +7,79 @@ internal class Program
     static void Main()
     {
         //Initialize variables for first shape
-        
-        //int area = 0;
-        //string shapeToBuild = "";
-        //int shapeSize1 = 0;
-        //int shapeSize2 = 0;
-        
+        int area = 0;
+        string shapeToBuild = "";
+        int shapeSize1 = 0;
+        int shapeSize2 = 0;
 
-        Console.WriteLine("Welcome to the shape builder!");
-
-        Console.WriteLine("Which shape would you like me to build? Enter square, circle, triangle or square.");
-
-        var shapeToBuild = Console.ReadLine().ToLower();
-
-        var shapeArea1 = ProgramHelpers.CreateShape(shapeToBuild);
-
-        Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea1 + ".");
-        
-        Thread.Sleep(300);
-        
-        Console.WriteLine("Would you like to add another shape to this one? If so, please enter another shape. Otherwise enter 'No.'");
-        
-        var secondShapeToBuild = Console.ReadLine().ToLower();
-
-        var shapeArea2 = ProgramHelpers.CreateShape(secondShapeToBuild);
-
-        if (secondShapeToBuild == "no")
-        {
-            ShowFunTrick();
-            return;
-        }
-
+        Console.WriteLine("Welcome to the shape builder! Which shape can I make for you today?");
 
         //Ask user for shape to build -> converted to lowercase for standardization
 
+        //Validate input
+        while (true)
+        {
+            try
+            {
+                shapeToBuild = Console.ReadLine();
+                shapeToBuild = shapeToBuild.ToLower();
 
+                if (shapeToBuild != "square" && shapeToBuild != "circle" && shapeToBuild != "rectangle" && shapeToBuild != "triangle")
+                {
+                    throw new InvalidInputException("Please enter a valid shape (square, circle, rectangle, triangle).");
+                }
+                break;
+            }
 
+            catch (InvalidInputException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
+        //Ask user for first dimension of shape 
+        //For simple shapes - secondShapeSize2 is length for square and radius for circle
+        //For simplification purposes, these are treated as a single dimension without a unit of measurement
+        //If a number can be found in input, it is assigned to the variable secondShapeSize2
+        Console.WriteLine("Thank you for choosing a " + shapeToBuild + "! What size would you like the shape to be?");
 
-        /*
+        while (true)
+        {
+            try
+            {
+                shapeSize1 = int.Parse(Console.ReadLine());
+                break;
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid number.");
+            }
+        }
+
+        //This sets up the program to handle more complex shapes with two dimensions
+        //The second dimension is height for rectangle and base for triangle
+        //Triangle is assumed to be equilateral or isoceles
+
+        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
+        {
+            Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
+            while (true) {
+                try {
+                    shapeSize2 = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
+            }
+        }
+
+        Console.WriteLine("Thank you! I will now calculate the area of the shape.");
+
+        Thread.Sleep(500);
+
         Console.WriteLine("Calculating.....................");
 
         if (shapeToBuild == "square" || shapeToBuild == "circle")
@@ -122,7 +157,6 @@ internal class Program
         Console.WriteLine("The combined area of the two shapes is " + combinedShapeArea + ".");
 
         Thread.Sleep(500);
-        */
     }
     
 private static void ShowFunTrick()
@@ -143,7 +177,6 @@ private static void ShowFunTrick()
             }
         }
     }
-
     }
 
-
+*/

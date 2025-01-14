@@ -10,9 +10,75 @@ public class ProgramHelpers
     //CreateShape creates a shape based on the dimensions provided by the user and performs method to calculate area for that shape.
     //The method can take three arguments: the shape to build, the first dimension, and the second dimension
     //For the more complex shapes, the second dimension is required
-    public static int CreateShape(string shapeToBuild, int shapeSize, int shapeSize2 = 0)
+    public static int CreateShape(string shapeToBuild)
     {
         int area = 0;
+        int shapeSize = 0;
+        int shapeSize2 = 0;
+
+        Thread.Sleep(500);
+        Console.WriteLine("Thank you for choosing a " + shapeToBuild + "! What size would you like the shape to be?");
+
+        //Validate input
+        while (true)
+        {
+            try
+            {
+                shapeToBuild = shapeToBuild.ToLower();
+
+                if (shapeToBuild != "square" && shapeToBuild != "circle" && shapeToBuild != "rectangle" && shapeToBuild != "triangle")
+                {
+                    throw new InvalidInputException("Please enter a valid shape (square, circle, rectangle, triangle).");
+                }
+                break;
+            }
+
+            catch (InvalidInputException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        while (true)
+        {
+            try
+            {
+                shapeSize = int.Parse(Console.ReadLine());
+                break;
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid number.");
+            }
+        }
+
+        //This sets up the program to handle more complex shapes with two dimensions
+        //The second dimension is height for rectangle and base for triangle
+        //Triangle is assumed to be equilateral or isoceles
+
+        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
+        {
+            Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
+            while (true)
+            {
+                try
+                {
+                    shapeSize2 = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
+            }
+        }
+
+        Console.WriteLine("Thank you! I will now calculate the area of the shape.");
+
+        Thread.Sleep(500);
+
 
         switch (shapeToBuild)
         {
@@ -43,8 +109,9 @@ public class ProgramHelpers
                 Console.WriteLine("That shape will be available in a future expansion pack!");
                 break;
         }
-            return area;
-        }
+           return area;
+        //Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
+    }
     public static void DoFunTrick(string funTrickResponse)
     {
         switch (funTrickResponse)
@@ -53,7 +120,8 @@ public class ProgramHelpers
                 Console.WriteLine("You're not very much fun at parties, are you?");
                 break;
             case "triangle":
-                Triangle.TriangleSpecial();
+                string triangleFun = Triangle.TriangleSpecial();
+                Console.WriteLine(triangleFun);
                 break;
             case "rectangle":
                 string rectangleFun = Rectangle.RectangleMagicNumber();
@@ -91,6 +159,14 @@ public class ProgramHelpers
         Random rando = new Random();
         return rando.Next(1, 21);
     }
+    internal enum ShapeType
+    {
+        Square,
+        Circle,
+        Triangle,
+        Rectangle
+    }
+
 }
 
 
