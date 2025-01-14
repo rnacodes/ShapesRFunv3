@@ -1,7 +1,4 @@
-﻿using ShapesRFun.Bases;
-using System;
-using ShapesRFun.Interfaces;
-namespace ShapesRFun;
+﻿namespace ShapesRFun;
 
 //This file contains the methods that build the shapes and calculate their areas
 //These are methods needed for the program to run, but are separated from the UI
@@ -17,7 +14,7 @@ public class ProgramHelpers
         int shapeSize2 = 0;
 
         Thread.Sleep(500);
-        Console.WriteLine("Thank you for choosing a " + shapeToBuild + "! What size would you like the shape to be?");
+        Console.WriteLine("Thank you for choosing a " + shapeToBuild + "! What is the first dimension of the shape?");
 
         //Validate input
         while (true)
@@ -112,6 +109,24 @@ public class ProgramHelpers
            return area;
         //Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
     }
+    public static void PickFunTrick()
+    {
+        Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
+        while (true)
+        {
+            try
+            {
+                var funTrickResponse = Console.ReadLine().ToLower();
+                DoFunTrick(funTrickResponse);
+                break;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid shape.");
+            }
+        }
+    }
+
     public static void DoFunTrick(string funTrickResponse)
     {
         switch (funTrickResponse)
@@ -166,6 +181,8 @@ public class ProgramHelpers
         Triangle,
         Rectangle
     }
+
+
 
 }
 

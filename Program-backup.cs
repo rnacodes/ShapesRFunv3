@@ -98,7 +98,7 @@ internal class Program
 
         if (secondShapeAnswer == "no")
         {
-            ShowFunTrick();
+            PickFunTrick();
             return;
         }
 
@@ -158,7 +158,7 @@ internal class Program
         Thread.Sleep(500);
     }
     
-private static void ShowFunTrick()
+private static void PickFunTrick()
     {
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
         while (true)
