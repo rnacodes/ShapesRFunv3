@@ -5,11 +5,10 @@ internal class Program
     {
         Console.WriteLine("Welcome to the shape builder!");
 
-        Console.WriteLine("Which shape would you like me to build? Enter square, circle, triangle or square.");
+        Console.WriteLine("Which shape would you like me to build? Enter square, circle, triangle or rectangle.");
 
         var shapeToBuild = Console.ReadLine().ToLower();
-        Thread.Sleep(500);
-        //Use shape an
+        Thread.Sleep(400);
 
         Console.WriteLine("Thank you for choosing a " + shapeToBuild + "!");
         Thread.Sleep(400);
@@ -22,12 +21,9 @@ internal class Program
         Console.WriteLine("Calculating area....................");
         Thread.Sleep(400);
 
-        var area = ProgramHelpers.CreateShapeAndGetArea(shapeToBuild, shapeSize, shapeSize2);
+        var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuild, shapeSize, shapeSize2);
 
-        Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
-
-        //var shapeArea1 = ProgramHelpers.GetShapeInfo(shapeToBuild);
-
+        Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea1 + ".");
 
         Thread.Sleep(300);
         
@@ -35,33 +31,36 @@ internal class Program
         
         var secondShapeToBuild = Console.ReadLine().ToLower();
 
-       if (secondShapeToBuild == "no")
-        {
-            ProgramHelpers.PickFunTrick();
-            return;
-        }
+        if (secondShapeToBuild == "no")
+            {
+                ProgramHelpers.PickFunTrick();
+                return;
+            }
 
-        var shapeArea2 = ProgramHelpers.GetShapeInfo(secondShapeToBuild);
+        (secondShapeToBuild, int secondShapeSize1, int secondShapeSize2) = ProgramHelpers.GetShapeInfo(secondShapeToBuild);
+        Console.WriteLine("Creating second shape and calculating area....................");
+        Thread.Sleep(300);
 
-        //Instantiation of AddShapes class to add the area of two shapes together
-        
-        /*
+        var shapeArea2 = ProgramHelpers.CreateShapeAndGetArea(secondShapeToBuild, secondShapeSize1, secondShapeSize2);
+
+        //Instantiation of AddShapes class to add the area of two shapes together       
         AddShapes addShapesInstantiation = new();
         var combinedShapeArea = addShapesInstantiation.AddShapesHere(shapeArea1, shapeArea2);
 
         Thread.Sleep(300);
 
+        Console.WriteLine("The area of the " + secondShapeToBuild + " is " + shapeArea2 + ".");
         Console.WriteLine("Calculating combined area.....................");
 
         Thread.Sleep(300);
 
+
         Console.WriteLine("The combined area of the two shapes is " + combinedShapeArea + ".");
 
         Thread.Sleep(300);
-
-        ProgramHelpers.PickFunTrick();
-        */
+        
+        ProgramHelpers.PickFunTrick();       
     }
-    }
+}
 
 

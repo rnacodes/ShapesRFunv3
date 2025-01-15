@@ -9,12 +9,10 @@ public class ProgramHelpers
     //For the more complex shapes, the second dimension is required
     public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
     {
-        //int area = 0;
         int shapeSize = 0;
         int shapeSize2 = 0;
 
-        //Thread.Sleep(500);
-        Console.WriteLine("What is the first dimension of the shape?");
+        Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
 
         //Validate input
         while (true)
@@ -74,19 +72,7 @@ public class ProgramHelpers
         return (shapeToBuild, shapeSize, shapeSize2);
     }
 
-        /*
-
-        //Shape is created
-
-        //Console.WriteLine("Thank you! I will now create the shape.");
-        //Console.WriteLine("Thank you! I will now calculate the area of the shape.");
-
-        Thread.Sleep(400);
-        
-        //Console.WriteLine("Creating shape....................");
-        //Thread.Sleep(400);
-*/
-public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int shapeSize2) {
+public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int shapeSize2) {
         int area = 0;       
         switch (shapeToBuild)
         {
@@ -116,13 +102,9 @@ public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shap
                 Console.WriteLine("That shape will be available in a future expansion pack!");
                 break;
         }
-           return (area, shapeToBuild);
+            return area; 
     }   
     
-    //Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
-   
-
-
     public static void PickFunTrick()
     {
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
@@ -195,9 +177,6 @@ public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shap
         Triangle,
         Rectangle
     }
-
-
-
 }
 
 
