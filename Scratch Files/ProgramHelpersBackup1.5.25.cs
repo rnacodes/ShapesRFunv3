@@ -1,20 +1,22 @@
-﻿namespace ShapesRFun;
+﻿/*
+
+namespace ShapesRFun;
 
 //This file contains the methods that build the shapes and calculate their areas
 //These are methods needed for the program to run, but are separated from the UI
 public class ProgramHelpers
-    {
+{
     //GetShapeInfo creates a shape based on the dimensions provided by the user and performs method to calculate area for that shape.
     //The method can take three arguments: the shape to build, the first dimension, and the second dimension
     //For the more complex shapes, the second dimension is required
-    public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
+    public static int GetShapeInfo(string shapeToBuild)
     {
-        //int area = 0;
+        int area = 0;
         int shapeSize = 0;
         int shapeSize2 = 0;
 
-        //Thread.Sleep(500);
-        Console.WriteLine("What is the first dimension of the shape?");
+        Thread.Sleep(500);
+        Console.WriteLine("Thank you for choosing a " + shapeToBuild + "! What is the first dimension of the shape?");
 
         //Validate input
         while (true)
@@ -71,23 +73,12 @@ public class ProgramHelpers
                 }
             }
         }
-        return (shapeToBuild, shapeSize, shapeSize2);
-    }
 
-        /*
+        Console.WriteLine("Thank you! I will now calculate the area of the shape.");
 
-        //Shape is created
+        Thread.Sleep(500);
 
-        //Console.WriteLine("Thank you! I will now create the shape.");
-        //Console.WriteLine("Thank you! I will now calculate the area of the shape.");
 
-        Thread.Sleep(400);
-        
-        //Console.WriteLine("Creating shape....................");
-        //Thread.Sleep(400);
-*/
-public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int shapeSize2) {
-        int area = 0;       
         switch (shapeToBuild)
         {
             case "circle": //Circle is simple shape
@@ -99,6 +90,7 @@ public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shap
                 Square squareShape = new Square();
                 squareShape.Dimension = shapeSize;
                 area = squareShape.GetArea();
+                //squareShape.GetPerimeter();
                 break;
             case "rectangle": //Rectangle is complex shape
                 Rectangle rectangleShape = new Rectangle();
@@ -116,13 +108,9 @@ public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shap
                 Console.WriteLine("That shape will be available in a future expansion pack!");
                 break;
         }
-           return (area, shapeToBuild);
-    }   
-    
-    //Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
-   
-
-
+        return area;
+        //Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
+    }
     public static void PickFunTrick()
     {
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
@@ -199,5 +187,5 @@ public static (int area, string shapeToBuild) CreateShapeAndGetArea (string shap
 
 
 }
-
+*/
 

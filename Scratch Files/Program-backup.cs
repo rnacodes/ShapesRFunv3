@@ -83,10 +83,10 @@ internal class Program
 
         if (shapeToBuild == "square" || shapeToBuild == "circle")
         {
-            area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1);
+            area = ProgramHelpers.GetShapeInfo(shapeToBuild, shapeSize1);
         } else
         {
-            area = ProgramHelpers.CreateShape(shapeToBuild, shapeSize1, shapeSize2);
+            area = ProgramHelpers.GetShapeInfo(shapeToBuild, shapeSize1, shapeSize2);
         }
         Console.WriteLine("The area of the " + shapeToBuild + " is " + area + ".");
 
@@ -140,10 +140,10 @@ internal class Program
             {
                 Console.WriteLine("Please enter a valid number.");
             }
-            secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1, secondShapeSize2);
+            secondShapeArea = ProgramHelpers.GetShapeInfo(secondShapeToBuild, secondShapeSize1, secondShapeSize2);
         } else
         {
-            secondShapeArea = ProgramHelpers.CreateShape(secondShapeToBuild, secondShapeSize1);
+            secondShapeArea = ProgramHelpers.GetShapeInfo(secondShapeToBuild, secondShapeSize1);
         }
 
         //Instantiation of AddShapes class to add the area of two shapes together
