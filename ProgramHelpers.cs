@@ -9,31 +9,10 @@ public class ProgramHelpers
     //For the more complex shapes, the second dimension is required
     public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
     {
-        int shapeSize = 0;
-        int shapeSize2 = 0;
+        var shapeSize = 0;
+        var shapeSize2 = 0;
 
         Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
-
-        //Validate input
-        while (true)
-        {
-            try
-            {
-                shapeToBuild = shapeToBuild.ToLower();
-
-                if (shapeToBuild != "square" && shapeToBuild != "circle" && shapeToBuild != "rectangle" && shapeToBuild != "triangle")
-                {
-                    throw new InvalidInputException("Please enter a valid shape (square, circle, rectangle, triangle).");
-                }
-                break;
-            }
-
-            catch (InvalidInputException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
 
         while (true)
         {
@@ -98,9 +77,6 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 triangleShape.Dimension2 = shapeSize2;
                 area = triangleShape.GetArea();
                 break;
-            default:
-                Console.WriteLine("That shape will be available in a future expansion pack!");
-                break;
         }
             return area; 
     }   
@@ -153,13 +129,13 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 Square squareFun = new Square();
                 squareFun.Dimension = GetRando();
                 int squareFunArea = squareFun.GetArea();
-                Console.WriteLine("I change shapes just to hide in this place. I can perform magic on a square with the area of " + squareFunArea);
+                Console.WriteLine("I change shapes just to hide in this place. I can perform magic on a square that is size" + squareFun.Dimension + "the area of " + squareFunArea);
                 Thread.Sleep(500);
                 Console.WriteLine("Contemplating.....................");
                 Thread.Sleep(500);
                 int halfArea = squareFun.HalveArea();
                 int doubleArea = squareFun.DoubleArea();
-                Console.WriteLine("The double area of the square is " + doubleArea + " and the half area of the square is " + halfArea + ".");
+                Console.WriteLine("The double area of a square is " + doubleArea + " and the half area of the square is " + halfArea + ".");
                 break;
         }
     }

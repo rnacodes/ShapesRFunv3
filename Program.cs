@@ -7,11 +7,30 @@ internal class Program
 
         Console.WriteLine("Which shape would you like me to build? Enter square, circle, triangle or rectangle.");
 
-        var shapeToBuild = Console.ReadLine().ToLower();
-        Thread.Sleep(400);
+        var shapeToBuild = "";
+        
+        while (true)
+        {
+            try
+            {
+                shapeToBuild = Console.ReadLine().ToLower();
+                
+                if (shapeToBuild != "square" && shapeToBuild != "circle" && shapeToBuild != "rectangle" && shapeToBuild != "triangle")
+                {
+                    throw new InvalidInputException("Please enter a valid shape (square, circle, rectangle, triangle).");
+                }
+                break;
+            }
+
+            catch (InvalidInputException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        Thread.Sleep(200);
 
         Console.WriteLine("Thank you for choosing a " + shapeToBuild + "!");
-        Thread.Sleep(400);
+        Thread.Sleep(200);
 
         (shapeToBuild, int shapeSize, int shapeSize2) = ProgramHelpers.GetShapeInfo(shapeToBuild);
 
@@ -33,6 +52,7 @@ internal class Program
 
         if (secondShapeToBuild == "no")
             {
+                Thread.Sleep(200);
                 ProgramHelpers.PickFunTrick();
                 return;
             }
