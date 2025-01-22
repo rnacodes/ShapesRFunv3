@@ -52,13 +52,16 @@ public class ProgramHelpers
     }
 
 public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int shapeSize2) {
-        int area = 0;       
+        int area = 0;     
+        ICalculateArea tal;
         switch (shapeToBuild)
         {
             case "circle": //Circle is simple shape
-                Circle circleShape = new Circle();
-                circleShape.Dimension = shapeSize;
-                area = circleShape.GetArea();
+
+                //Circle circleShape = new Circle();
+                //circleShape.Dimension = shapeSize;
+                //tal = new Circle(new List<int> {shapeSize});
+                //area = tal.GetArea();
                 break;
             case "square": //Square is simple shape
                 Square squareShape = new Square();
@@ -67,9 +70,10 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 break;
             case "rectangle": //Rectangle is complex shape
                 Rectangle rectangleShape = new Rectangle();
-                rectangleShape.Dimension = shapeSize;
-                rectangleShape.Dimension2 = shapeSize2;
-                area = rectangleShape.GetArea();
+                //tal = new Rectangle(new List<int> { shapeSize, shapeSize2 });
+                //rectangleShape.Dimension = shapeSize;
+                //rectangleShape.Dimension2 = shapeSize2;
+                //area = tal.GetArea();
                 break;
             case "triangle": //Triangle is complex shape
                 Triangle triangleShape = new Triangle();
@@ -78,9 +82,10 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 area = triangleShape.GetArea();
                 break;
         }
-            return area; 
-    }   
-    
+        //return tal.GetArea(); 
+        return 0; 
+    }
+
     public static void PickFunTrick()
     {
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");

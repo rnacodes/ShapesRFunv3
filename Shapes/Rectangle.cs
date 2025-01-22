@@ -1,12 +1,24 @@
 ﻿using ShapesRFun.Bases;
 using ShapesRFun.Interfaces;
 
-public class Rectangle : SpecialShapeBase, IChangeShapes
-    {
+public class Rectangle : AbstractShapeBase,/*AbstractShapeBase,*/IChangeShapes
+{
     // Implement any additional members or override methods here
+
+    /*
+    public Rectangle(IList<int> dimensions) : base(dimensions)
+    {
+        
+    }
     public override int GetArea()
     {
-        return Dimension * Dimension2;
+        return Dimensions[0] * Dimensions[1];
+    }
+    */
+
+    public override int GetArea()
+    {
+        return Dimension * Dimension;
     }
 
     public static string RectangleMagicNumber()

@@ -11,8 +11,8 @@ namespace ShapesRFun.Tests
         public void AddShapesHere_ShouldReturnCorrectSum()
         {
             // Arrange
-            var mockShape1 = new Mock<ShapeBase>();
-            var mockShape2 = new Mock<ShapeBase>();
+            var mockShape1 = new Mock<AbstractShapeBase>();
+            var mockShape2 = new Mock<AbstractShapeBase>();
 
             mockShape1.Setup(m => m.GetArea()).Returns(25);
             mockShape2.Setup(m => m.GetArea()).Returns(25);
