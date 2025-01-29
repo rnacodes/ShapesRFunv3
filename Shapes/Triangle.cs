@@ -1,5 +1,6 @@
 ﻿using ShapesRFun.Bases;
 
+/*
 internal class Triangle : SpecialShapeBase
 {
     public override int GetArea()
@@ -13,5 +14,5 @@ internal class Triangle : SpecialShapeBase
     }
 
 }
-
+*/
 

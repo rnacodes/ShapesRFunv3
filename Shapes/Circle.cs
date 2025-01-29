@@ -3,44 +3,34 @@ using ShapesRFun.Interfaces;
 //Circle - simple shape
 //Inherits from AbstractShapeBase class
 //Has dimension property and ability to calculate area from the AbstractShapeBase class
-//Implenets IGetPerimeter interface
+//ImpleMENTS IGetPerimeter interface
 
-public class Circle(Dictionary<string, int> dimensions) : AbstractShapeBase, IGetPerimeter
+public class Circle : AbstractShapeBase, IGetPerimeter
 {
+    //Circle properties
+    public int Radius { get; set; }
+    public int Diameter { get; set; }
+
     //Circle constructor
-    public Circle : base(new )
-
-
-    /*
-    public Circle(IList<int> dimensions) : base(dimensions)
+    public Circle(int radius) : base(new Dictionary<string, int> { { "radius", radius }, { "diameter", radius * 2 } })
     {
-    }
-    */
+        Radius = radius;
+        Diameter = radius * 2;
+        Area = GetArea();
+        Perimeter = GetPerimeter();
 
+    }
 
     public override int GetArea()
     {
-        return (int)(Math.PI * Math.Pow(DimensionSize[0], 2));
+        return (int)(Math.PI * Math.Pow(Dimensions["radius"], 2));
     }
+
     public override int GetPerimeter()
     {
-        return (int)(2 * Math.PI * DimensionSize[0]);
+        return (int)(2 * Math.PI * Dimensions["radius"]);
     }
 }
-
-    /*
-    public override int GetArea()
-    {
-        return (int)(Math.PI * (Dimensions.FirstOrDefault() ^2));
-    }
-
-
-    public int GetPerimeter()
-    {
-        return (int)(2 * Math.PI * Dimensions.FirstOrDefault());
-    }
-    
-    */
 
 
 

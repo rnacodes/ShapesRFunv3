@@ -1,7 +1,7 @@
 ﻿using ShapesRFun.Bases;
 using ShapesRFun.Interfaces;
-
-public class Rectangle : AbstractShapeBase,/*AbstractShapeBase,*/IChangeShapes
+/*
+public class Rectangle : AbstractShapeBase,/*AbstractShapeBase,IChangeShapes
 {
     // Implement any additional members or override methods here
 
@@ -14,7 +14,7 @@ public class Rectangle : AbstractShapeBase,/*AbstractShapeBase,*/IChangeShapes
     {
         return Dimensions[0] * Dimensions[1];
     }
-    */
+   
 
     public override int GetArea()
     {
@@ -36,3 +36,5 @@ public class Rectangle : AbstractShapeBase,/*AbstractShapeBase,*/IChangeShapes
         return GetArea() / 2;
     }
 }
+
+*/

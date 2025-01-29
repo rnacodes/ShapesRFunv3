@@ -28,6 +28,9 @@ public class ProgramHelpers
             }
         }
 
+        /* 
+         THIS IS FOR SHAPES WITH TWO DIMENSIONS
+         
         //This sets up the program to handle more complex shapes with two dimensions
         //The second dimension is height for rectangle and base for triangle
         //Triangle is assumed to be equilateral or isoceles
@@ -48,26 +51,40 @@ public class ProgramHelpers
                 }
             }
         }
+        */
         return (shapeToBuild, shapeSize, shapeSize2);
     }
 
 public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int shapeSize2) {
         int area = 0;     
-        ICalculateArea tal;
+        //IGetArea tal;
+        IGetArea newObject;  //Example of using polymorphism to get area
+
         switch (shapeToBuild)
         {
             case "circle": //Circle is simple shape
+            newObject = new Circle(shapeSize);
+            area = newObject.GetArea();
+                // In this syntax, all that needs to change is the shape name and the shape size
 
-                //Circle circleShape = new Circle();
-                //circleShape.Dimension = shapeSize;
-                //tal = new Circle(new List<int> {shapeSize});
-                //area = tal.GetArea();
+                //Circle newShape = new Circle(shapeSize);
                 break;
-            case "square": //Square is simple shape
-                Square squareShape = new Square();
-                squareShape.Dimension = shapeSize;
-                area = squareShape.GetArea();
-                break;
+                /*
+                 THIS IS THE SYNTAX TAL AND I WERE DISCUSSING 
+                case "circle": //Circle is simple shape
+
+                    //Circle circleShape = new Circle();
+                    //circleShape.Dimension = shapeSize;
+                    tal = new Circle(new List<int> {shapeSize});
+                    area = tal.GetArea();
+                    break;
+                case "square": //Square is simple shape
+                    Square squareShape = new Square();
+                    squareShape.Dimension = shapeSize;
+                    area = squareShape.GetArea();
+                    break;
+                */
+                /*
             case "rectangle": //Rectangle is complex shape
                 Rectangle rectangleShape = new Rectangle();
                 //tal = new Rectangle(new List<int> { shapeSize, shapeSize2 });
@@ -81,11 +98,14 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 triangleShape.Dimension2 = shapeSize2;
                 area = triangleShape.GetArea();
                 break;
+                */
         }
         //return tal.GetArea(); 
-        return 0; 
+        //return 0; 
+        return area;
     }
 
+    /*
     public static void PickFunTrick()
     {
         Console.WriteLine("Would you like to see a fun trick? Enter the name of a shape to see their unique secrets!");
@@ -144,6 +164,8 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 break;
         }
     }
+    */
+
 
     //Generates a random number between 1 and 20
     public static int GetRando()

@@ -3,10 +3,10 @@ namespace ShapesRFun.Bases;
 
 //This is the basic template for all shapes
 //It contains the Dimension property, the GetArea method
-//The abstract class AbstractShapeBase implements the ICalculateArea interface
+//The abstract class AbstractShapeBase implements the IGetArea interface
 
 /*
-public abstract class AbstractShapeBase : ICalculateArea
+public abstract class AbstractShapeBase : IGetArea
     {
     public AbstractShapeBase(IList<int> dimensions)
     {
@@ -15,7 +15,7 @@ public abstract class AbstractShapeBase : ICalculateArea
     // Property for size
     public IList<int> Dimensions { get; }
 */
-// Abstract method for getting the area that is inherited from the ICalculateArea interface
+// Abstract method for getting the area that is inherited from the IGetArea interface
 //public abstract int GetArea();
 
 

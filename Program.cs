@@ -44,6 +44,8 @@ internal class Program
 
         Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea1 + ".");
 
+        /*
+        
         Thread.Sleep(300);
         
         Console.WriteLine("Would you like to add another shape to this one? If so, please enter another shape. Otherwise enter 'No.'");
@@ -79,7 +81,8 @@ internal class Program
 
         Thread.Sleep(300);
         
-        ProgramHelpers.PickFunTrick();       
+        ProgramHelpers.PickFunTrick();   
+        */
     }
 }
 
