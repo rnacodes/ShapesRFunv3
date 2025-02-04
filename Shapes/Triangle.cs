@@ -1,18 +1,48 @@
 ﻿using ShapesRFun.Bases;
 
-/*
-internal class Triangle : SpecialShapeBase
+namespace ShapesRFun.Shapes;
+
+
+public class Triangle : AbstractShapeBase
 {
-    public override int GetArea()
+    public Triangle(int baseLength, int height)
     {
-        return (int)Math.Round((Dimension * Dimension2)/2.0);
+        BaseLength = baseLength;
+        Height = height;
+        /*
+        Dimensions = new Dictionary<string, int>
+        {
+            { "baseLength", baseLength },
+            { "height", height }
+        };
+        */
     }
 
-    public static string TriangleSpecial()
+    public int BaseLength { get; set; }
+
+    public int Height { get; set; }
+
+    public override int GetArea()
+    {
+        return (int)Math.Round((BaseLength * Height)/2.0);
+    }
+
+    public override int GetPerimeter()
+    {
+        return 3 * BaseLength;
+    }
+
+    public static string TellFunnyJoke()
     {
         return "What is a triangle’s favorite newspaper? The HypotoNews!";
     }
 
+    public static List<string> DimensionNames = new List<string> { "baseLength", "height" };
+
+    public static List<string> GetDimensionNames()
+    {
+        return DimensionNames;
+    }
 }
-*/
+
 

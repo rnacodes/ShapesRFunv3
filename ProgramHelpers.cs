@@ -1,48 +1,43 @@
-﻿namespace ShapesRFun;
+﻿using System.Drawing;
+using ShapesRFun.Shapes;
+
+namespace ShapesRFun;
 
 //This file contains the methods that build the shapes and calculate their areas
 //These are methods needed for the program to run, but are separated from the UI
 public class ProgramHelpers
     {
-    //GetShapeInfo creates a shape based on the dimensions provided by the user and performs method to calculate area for that shape.
-    //The method can take three arguments: the shape to build, the first dimension, and the second dimension
-    //For the more complex shapes, the second dimension is required
-    public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
+
+    
+    private static readonly Dictionary<string, List<string>> allShapeDimensions = new Dictionary<string, List<string>>
     {
-        var shapeSize = 0;
-        var shapeSize2 = 0;
+        {"circle", Circle.GetDimensionNames()},
+        //{"square", Square.DimensionNames},
+        //{"rectangle", Rectangle.DimensionNames},
+        {"triangle", Triangle.GetDimensionNames()} //,
+        //{"rectangular prism", RectangularPrism.DimensionNames}
+    };
 
-        Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
 
-        while (true)
+
+    public static IGetArea CreateShapeFromUserInput(string shapeToBuild)
+    {
+        if (!allShapeDimensions.TryGetValue(shapeToBuild.ToLower(), out List<string> dimensionNames))
         {
-            try
-            {
-                shapeSize = int.Parse(Console.ReadLine());
-                break;
-            }
-
-            catch (FormatException)
-            {
-                Console.WriteLine("Please enter a valid number.");
-            }
+            throw new ArgumentException("Invalid shape type.");
         }
 
-        /* 
-         THIS IS FOR SHAPES WITH TWO DIMENSIONS
-         
-        //This sets up the program to handle more complex shapes with two dimensions
-        //The second dimension is height for rectangle and base for triangle
-        //Triangle is assumed to be equilateral or isoceles
+        var dimensions = new List<int>();
 
-        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
+        for (int i = 0; i < dimensionNames.Count; i++)
         {
-            Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
+            Console.WriteLine($"What is the {dimensionNames[i]} of the {shapeToBuild}?");
             while (true)
             {
                 try
                 {
-                    shapeSize2 = int.Parse(Console.ReadLine());
+                    int dimension = int.Parse(Console.ReadLine());
+                    dimensions.Add(dimension);
                     break;
                 }
                 catch (FormatException)
@@ -51,20 +46,51 @@ public class ProgramHelpers
                 }
             }
         }
-        */
-        return (shapeToBuild, shapeSize, shapeSize2);
+
+        return CreateShape(shapeToBuild, dimensions);
     }
 
-public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int shapeSize2) {
-        int area = 0;     
+    public static IGetArea CreateShape(string shapeToBuild, List<int> dimensions)
+    {
+        IGetArea newObject;
+
+        switch (shapeToBuild.ToLower())
+        {
+            case "circle":
+                newObject = new Circle(dimensions[0]);
+                break;
+            case "triangle":
+                newObject = new Triangle(dimensions[0], dimensions[1]);
+                break;
+            /*
+        case "rectangular prism":
+            newObject = new RectangularPrism(dimensions[0], dimensions[1], dimensions[2]);
+            break;
+            */
+            /*
+        case "tesseract":
+            newObject = new Tesseract(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
+            break;
+            */
+            default:
+                throw new ArgumentException("Invalid shape type.");
+        }
+
+        return newObject;
+    }
+
+    /*
+    public static int CreateShapeAndGetArea(string shapeToBuild, int shapeSize, int shapeSize2)
+    {
+        int area = 0;
         //IGetArea tal;
         IGetArea newObject;  //Example of using polymorphism to get area
 
         switch (shapeToBuild)
         {
             case "circle": //Circle is simple shape
-            newObject = new Circle(shapeSize);
-            area = newObject.GetArea();
+                newObject = new Circle(shapeSize);
+                area = newObject.GetArea();
                 // In this syntax, all that needs to change is the shape name and the shape size
 
                 //Circle newShape = new Circle(shapeSize);
@@ -98,12 +124,67 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
                 triangleShape.Dimension2 = shapeSize2;
                 area = triangleShape.GetArea();
                 break;
-                */
+                
         }
         //return tal.GetArea(); 
         //return 0; 
         return area;
     }
+    
+   
+
+
+    /*
+    public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
+    {
+        var shapeSize = 0;
+        var shapeSize2 = 0;
+
+        Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
+
+        while (true)
+        {
+            try
+            {
+                shapeSize = int.Parse(Console.ReadLine());
+                break;
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid number.");
+            }
+        }
+
+        /* 
+         THIS IS FOR SHAPES WITH TWO DIMENSIONS
+         
+        //This sets up the program to handle more complex shapes with two allShapeDimensions
+        //The second dimension is height for rectangle and base for triangle
+        //Triangle is assumed to be equilateral or isoceles
+
+        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
+        {
+            Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
+            while (true)
+            {
+                try
+                {
+                    shapeSize2 = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
+            }
+        }
+        
+        return (shapeToBuild, shapeSize, shapeSize2);
+    }
+    */
+
+
 
     /*
     public static void PickFunTrick()
@@ -173,13 +254,17 @@ public static int CreateShapeAndGetArea (string shapeToBuild, int shapeSize, int
         Random rando = new Random();
         return rando.Next(1, 21);
     }
-    internal enum ShapeType
+
+    /*
+    private static readonly Dictionary<string, int> allShapeDimensions = new Dictionary<string, int>
     {
-        Square,
-        Circle,
-        Triangle,
-        Rectangle
-    }
+        {"circle", 1},
+        {"triangle", 2},
+        {"rectangular prism", 3},
+        {"tesseract", 4}
+    };
+    */
+
 }
 
 

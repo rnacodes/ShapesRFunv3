@@ -1,5 +1,6 @@
 ﻿using ShapesRFun.Bases;
 using ShapesRFun.Interfaces;
+namespace ShapesRFun.Shapes;
 
 //Square inherits from the basic AbstractShapeBase class for shapes with only one Dimension required
 //This class that inherits from the AbstractShapeBase class and IChangeShapes interface

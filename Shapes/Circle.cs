@@ -1,24 +1,24 @@
 ﻿using ShapesRFun.Bases;
-using ShapesRFun.Interfaces;
+namespace ShapesRFun.Shapes;
 //Circle - simple shape
 //Inherits from AbstractShapeBase class
 //Has dimension property and ability to calculate area from the AbstractShapeBase class
 //ImpleMENTS IGetPerimeter interface
 
-public class Circle : AbstractShapeBase, IGetPerimeter
+public class Circle : AbstractShapeBase
 {
     //Circle properties
     public int Radius { get; set; }
-    public int Diameter { get; set; }
 
     //Circle constructor
-    public Circle(int radius) : base(new Dictionary<string, int> { { "radius", radius }, { "diameter", radius * 2 } })
+    public Circle(int radius)
     {
         Radius = radius;
-        Diameter = radius * 2;
-        Area = GetArea();
-        Perimeter = GetPerimeter();
+        //Dimensions = new Dictionary<string, int> { { "radius", radius } };
+    }
 
+    public int Diameter {
+        get { return Dimensions["radius"] * 2; }
     }
 
     public override int GetArea()
@@ -29,6 +29,25 @@ public class Circle : AbstractShapeBase, IGetPerimeter
     public override int GetPerimeter()
     {
         return (int)(2 * Math.PI * Dimensions["radius"]);
+    }
+
+    public static List<string> DimensionNames = new List<string> { "radius" };
+
+    public static List<string> GetDimensionNames()
+    {
+        return DimensionNames;
+    }
+
+    /*
+    public new Dictionary<string, int> GetDimensions()
+        {
+            return Dimensions;
+        }
+    */
+
+    public static string TellFunnyJoke()
+    {
+        return "Circles are pointless. Now that's a well rounded joke. Not edgy or anything.";
     }
 }
 

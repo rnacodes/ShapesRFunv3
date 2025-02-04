@@ -1,5 +1,6 @@
 ﻿using ShapesRFun.Bases;
 using ShapesRFun.Interfaces;
+namespace ShapesRFun.Shapes;
 /*
 public class Rectangle : AbstractShapeBase,/*AbstractShapeBase,IChangeShapes
 {

@@ -1,4 +1,6 @@
-﻿namespace ShapesRFun;
+﻿using ShapesRFun.Shapes;
+
+namespace ShapesRFun;
 internal class Program
 {
     static void Main()
@@ -15,9 +17,9 @@ internal class Program
             {
                 shapeToBuild = Console.ReadLine().ToLower();
                 
-                if (shapeToBuild != "square" && shapeToBuild != "circle" && shapeToBuild != "rectangle" && shapeToBuild != "triangle")
+                if (shapeToBuild != "circle" && shapeToBuild != "triangle" && shapeToBuild != "rectangular prism" && shapeToBuild != "tesseract")
                 {
-                    throw new InvalidInputException("Please enter a valid shape (square, circle, rectangle, triangle).");
+                    throw new InvalidInputException("Please enter a valid shape.");
                 }
                 break;
             }
@@ -32,7 +34,7 @@ internal class Program
         Console.WriteLine("Thank you for choosing a " + shapeToBuild + "!");
         Thread.Sleep(200);
 
-        (shapeToBuild, int shapeSize, int shapeSize2) = ProgramHelpers.GetShapeInfo(shapeToBuild);
+        ProgramHelpers.GetShapeInfo(shapeToBuild);
 
         Console.WriteLine("Creating shape....................");
         Thread.Sleep(400);
@@ -40,9 +42,12 @@ internal class Program
         Console.WriteLine("Calculating area....................");
         Thread.Sleep(400);
 
+        //var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuild, shapeSize, shapeSize2);
         var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuild, shapeSize, shapeSize2);
 
         Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea1 + ".");
+
+        var myClass = new Class1();
 
         /*
         
