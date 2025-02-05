@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using ShapesRFun.Bases;
 using ShapesRFun.Shapes;
 
 namespace ShapesRFun;
@@ -19,8 +20,25 @@ public class ProgramHelpers
     };
 
 
+    // Method to get the names of the shapes
+    public static List<string> GetShapeNames()
+    {
+        return allShapeDimensions.Keys.ToList();
+    }
 
-    public static IGetArea CreateShapeFromUserInput(string shapeToBuild)
+    public static Dictionary<string, List<string>> GetAllShapeDimensions()
+    {
+        return allShapeDimensions;
+    }
+
+
+    public static List<string> GetFirstValues()
+    {
+        return allShapeDimensions.Values.Select(dimensions => dimensions.First()).ToList();
+    }
+
+
+    public static AbstractShapeBase CreateShapeFromUserInput(string shapeToBuild)
     {
         if (!allShapeDimensions.TryGetValue(shapeToBuild.ToLower(), out List<string> dimensionNames))
         {
@@ -50,47 +68,87 @@ public class ProgramHelpers
         return CreateShape(shapeToBuild, dimensions);
     }
 
-    public static IGetArea CreateShape(string shapeToBuild, List<int> dimensions)
+    public static AbstractShapeBase CreateShape(string shapeToBuild, List<int> dimensions)
     {
-        IGetArea newObject;
+        AbstractShapeBase newShape;
 
         switch (shapeToBuild.ToLower())
         {
             case "circle":
-                newObject = new Circle(dimensions[0]);
+                newShape = new Circle(dimensions[0]);
                 break;
             case "triangle":
-                newObject = new Triangle(dimensions[0], dimensions[1]);
+                newShape = new Triangle(dimensions[0], dimensions[1]);
                 break;
             /*
-        case "rectangular prism":
-            newObject = new RectangularPrism(dimensions[0], dimensions[1], dimensions[2]);
-            break;
+            case "rectangular prism":
+                newShape = new RectangularPrism(dimensions[0], dimensions[1], dimensions[2]);
+                break;
             */
             /*
-        case "tesseract":
-            newObject = new Tesseract(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
-            break;
+            case "tesseract":
+                newShape = new Tesseract(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
+                break;
             */
             default:
                 throw new ArgumentException("Invalid shape type.");
         }
 
-        return newObject;
+        return newShape;
     }
 
+    public static int GetRando()
+    {
+        Random rando = new Random();
+        return rando.Next(1, 21);
+    }
+
+    /*
+    public static IGetArea CreateShapeFromUserInput(string shapeToBuild)
+    {
+        if (!allShapeDimensions.TryGetValue(shapeToBuild.ToLower(), out List<string> dimensionNames))
+        {
+            throw new ArgumentException("Invalid shape type.");
+        }
+
+        var dimensions = new List<int>();
+
+        for (int i = 0; i < dimensionNames.Count; i++)
+        {
+            Console.WriteLine($"What is the {dimensionNames[i]} of the {shapeToBuild}?");
+            while (true)
+            {
+                try
+                {
+                    int dimension = int.Parse(Console.ReadLine());
+                    dimensions.Add(dimension);
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
+            }
+        }
+
+        return GetShapeArea(shapeToBuild, dimensions);
+    }
+
+return shapeAreaGetter;
+}
+*/
     /*
     public static int CreateShapeAndGetArea(string shapeToBuild, int shapeSize, int shapeSize2)
     {
         int area = 0;
         //IGetArea tal;
-        IGetArea newObject;  //Example of using polymorphism to get area
+        IGetArea shapeAreaGetter;  //Example of using polymorphism to get area
 
         switch (shapeToBuild)
         {
             case "circle": //Circle is simple shape
-                newObject = new Circle(shapeSize);
-                area = newObject.GetArea();
+                shapeAreaGetter = new Circle(shapeSize);
+                area = shapeAreaGetter.GetArea();
                 // In this syntax, all that needs to change is the shape name and the shape size
 
                 //Circle newShape = new Circle(shapeSize);
@@ -110,79 +168,79 @@ public class ProgramHelpers
                     area = squareShape.GetArea();
                     break;
                 */
-                /*
-            case "rectangle": //Rectangle is complex shape
-                Rectangle rectangleShape = new Rectangle();
-                //tal = new Rectangle(new List<int> { shapeSize, shapeSize2 });
-                //rectangleShape.Dimension = shapeSize;
-                //rectangleShape.Dimension2 = shapeSize2;
-                //area = tal.GetArea();
-                break;
-            case "triangle": //Triangle is complex shape
-                Triangle triangleShape = new Triangle();
-                triangleShape.Dimension = shapeSize;
-                triangleShape.Dimension2 = shapeSize2;
-                area = triangleShape.GetArea();
-                break;
-                
-        }
-        //return tal.GetArea(); 
-        //return 0; 
-        return area;
-    }
-    
-   
-
-
     /*
-    public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
+case "rectangle": //Rectangle is complex shape
+    Rectangle rectangleShape = new Rectangle();
+    //tal = new Rectangle(new List<int> { shapeSize, shapeSize2 });
+    //rectangleShape.Dimension = shapeSize;
+    //rectangleShape.Dimension2 = shapeSize2;
+    //area = tal.GetArea();
+    break;
+case "triangle": //Triangle is complex shape
+    Triangle triangleShape = new Triangle();
+    triangleShape.Dimension = shapeSize;
+    triangleShape.Dimension2 = shapeSize2;
+    area = triangleShape.GetArea();
+    break;
+
+}
+//return tal.GetArea(); 
+//return 0; 
+return area;
+}
+
+
+
+
+/*
+public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
+{
+var shapeSize = 0;
+var shapeSize2 = 0;
+
+Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
+
+while (true)
+{
+try
+{
+    shapeSize = int.Parse(Console.ReadLine());
+    break;
+}
+
+catch (FormatException)
+{
+    Console.WriteLine("Please enter a valid number.");
+}
+}
+
+/* 
+THIS IS FOR SHAPES WITH TWO DIMENSIONS
+
+//This sets up the program to handle more complex shapes with two allShapeDimensions
+//The second dimension is height for rectangle and base for triangle
+//Triangle is assumed to be equilateral or isoceles
+
+if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
+{
+Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
+while (true)
+{
+    try
     {
-        var shapeSize = 0;
-        var shapeSize2 = 0;
-
-        Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
-
-        while (true)
-        {
-            try
-            {
-                shapeSize = int.Parse(Console.ReadLine());
-                break;
-            }
-
-            catch (FormatException)
-            {
-                Console.WriteLine("Please enter a valid number.");
-            }
-        }
-
-        /* 
-         THIS IS FOR SHAPES WITH TWO DIMENSIONS
-         
-        //This sets up the program to handle more complex shapes with two allShapeDimensions
-        //The second dimension is height for rectangle and base for triangle
-        //Triangle is assumed to be equilateral or isoceles
-
-        if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
-        {
-            Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
-            while (true)
-            {
-                try
-                {
-                    shapeSize2 = int.Parse(Console.ReadLine());
-                    break;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Please enter a valid number.");
-                }
-            }
-        }
-        
-        return (shapeToBuild, shapeSize, shapeSize2);
+        shapeSize2 = int.Parse(Console.ReadLine());
+        break;
     }
-    */
+    catch (FormatException)
+    {
+        Console.WriteLine("Please enter a valid number.");
+    }
+}
+}
+
+return (shapeToBuild, shapeSize, shapeSize2);
+}
+*/
 
 
 
@@ -249,11 +307,7 @@ public class ProgramHelpers
 
 
     //Generates a random number between 1 and 20
-    public static int GetRando()
-    {
-        Random rando = new Random();
-        return rando.Next(1, 21);
-    }
+
 
     /*
     private static readonly Dictionary<string, int> allShapeDimensions = new Dictionary<string, int>

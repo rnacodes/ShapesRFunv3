@@ -2,6 +2,7 @@
 using ShapesRFun.Interfaces;
 namespace ShapesRFun.Shapes;
 
+/*
 public class RectangularPrism : AbstractShapeBase, IGetVolume
 {
     public int Height { get; set; }
@@ -44,3 +45,4 @@ public class RectangularPrism : AbstractShapeBase, IGetVolume
     }
 }
 
+*/
