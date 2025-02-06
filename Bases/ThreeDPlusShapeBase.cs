@@ -7,7 +7,7 @@ namespace ShapesRFun.Bases;
 //SpecialShapeBase adds a property for depth and volume
 
 
-public abstract class ThreeDPlusShapeBase : AbstractShapeBase
+public abstract class ThreeDPlusShapeBase : AbstractShapeBase, IGetVolume
     {
 
 

@@ -2,8 +2,8 @@
 using ShapesRFun.Interfaces;
 namespace ShapesRFun.Shapes;
 
-/*
-public class Tesseract : ThreeDPlusShapeBase, IGetVolume  
+
+public class Tesseract : ThreeDPlusShapeBase
 {
     public int Height { get; set; }
     public int Width { get; set; }
@@ -19,26 +19,19 @@ public class Tesseract : ThreeDPlusShapeBase, IGetVolume
     }
 
     //Change this dictionary to match the properties of the Circle base
-    public Tesseract(int height, int width, int depth, int wDimension) : base(new Dictionary<string, int>
+    public static List<string> DimensionNames = new List<string> { "height", "width", "depth", "w-dimension" };
+
+    public static List<string> GetDimensionNames()
     {
-        { "height", height },
-        { "width", width },
-        { "depth", depth },
-        { "wDimension", wDimension }
-    })
-    {
-        Height = height;
-        Width = width;
-        Depth = depth;
-        WDimension = wDimension;
+        return DimensionNames;
     }
 
     public override int GetArea()
     {
         return 4 * (Height * Width * Depth * WDimension);
     }
-   
-    public int GetVolume()
+
+    public override int GetVolume()
     {
         return Height * Width * Depth;
     }
@@ -48,17 +41,8 @@ public class Tesseract : ThreeDPlusShapeBase, IGetVolume
         return "The answer to all questions is 42.";
     }
 
-/*
-public int DoubleArea()
-{
-    return GetArea() * 2;
+    public override int GetPerimeter()
+    {
+        return 8 * (Height + Width + Depth + WDimension);
+    }
 }
-
-public int HalveArea()
-{
-    return GetArea() / 2;
-}
-
-}
-
-*/

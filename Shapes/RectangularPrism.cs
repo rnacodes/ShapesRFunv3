@@ -2,18 +2,13 @@
 using ShapesRFun.Interfaces;
 namespace ShapesRFun.Shapes;
 
-/*
-public class RectangularPrism : AbstractShapeBase, IGetVolume
+
+public class RectangularPrism : AbstractShapeBase
 {
     public int Height { get; set; }
     public int Width { get; set; }
     public int Depth { get; set; }
-    public RectangularPrism(int height, int width, int depth) : base(new Dictionary<string, int>
-    {
-        { "height", height },
-        { "width", width },
-        { "depth", depth }
-    })
+    public RectangularPrism(int height, int width, int depth)
     {
         Height = height;
         Width = width;
@@ -29,20 +24,21 @@ public class RectangularPrism : AbstractShapeBase, IGetVolume
         return Height * Width * Depth;
     }
 
-    public static string RectangleMagicNumber()
+    public static string TellFunnyJoke()
     {
-        return "The answer to all questions is 42.";
+        return "So a rectangular prism walks into a bar And the bartender asks, \"Why the four long faces?\".";
     }
 
-    public int DoubleArea()
+    public override int GetPerimeter()
     {
-        return GetArea() * 2;
+        return 4 * (Height + Width + Depth);
     }
 
-    public int HalveArea()
+    public static List<string> DimensionNames = new List<string> { "height", "width", "depth" };
+
+    public static List<string> GetDimensionNames()
     {
-        return GetArea() / 2;
+        return DimensionNames;
     }
+
 }
-
-*/

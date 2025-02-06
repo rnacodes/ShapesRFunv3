@@ -1,4 +1,5 @@
-﻿using ShapesRFun.Shapes;
+﻿using ShapesRFun.Bases;
+using ShapesRFun.Shapes;
 
 namespace ShapesRFun;
 internal class Program
@@ -16,18 +17,19 @@ internal class Program
             Console.WriteLine($"{shapeName}");
         }
 
-        var shapeToBuild = "";
+        var shapeToBuildName = "";
         var shapeArea = 0;
+        AbstractShapeBase userCreatedShape;
 
         while (true)
         {
             try
             {
-                shapeToBuild = Console.ReadLine().ToLower();
+                shapeToBuildName = Console.ReadLine().ToLower();
 
                 //UPDATE WITH CURRENT LIST OF SHAPES
 
-                if (!shapeNames.Contains(shapeToBuild))
+                if (!shapeNames.Contains(shapeToBuildName))
                 {
                     throw new InvalidInputException("Please enter a valid shape.");
                 }
@@ -41,26 +43,29 @@ internal class Program
         }
         Thread.Sleep(200);
 
-        Console.WriteLine("Thank you for choosing a " + shapeToBuild + "!");
+        Console.WriteLine("Thank you for choosing a " + shapeToBuildName + "!");
         Thread.Sleep(200);
 
-        ProgramHelpers.CreateShapeFromUserInput(shapeToBuild);
+        //Console.WriteLine("Creating shape....................");
+        //Thread.Sleep(400);
 
-        Console.WriteLine("Creating shape....................");
-        Thread.Sleep(400);
-        Console.WriteLine("Your "+ shapeToBuild + " has been created.");
+        userCreatedShape = ProgramHelpers.CreateShapeFromUserInput(shapeToBuildName);
 
+        Console.WriteLine("Your "+ shapeToBuildName + " has been created.");
 
         Console.WriteLine("Calculating area....................");
         Thread.Sleep(400);
-        Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea + ".");
 
-        //////Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea + ".");
+        shapeArea = ProgramHelpers.GetShapeArea(userCreatedShape);
 
-        //var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuild, shapeSize, shapeSize2);
-        //var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuild, shapeSize, shapeSize2);
+        Console.WriteLine("The area of the " + shapeToBuildName + " is " + shapeArea + ".");
 
-        //Console.WriteLine("The area of the " + shapeToBuild + " is " + shapeArea1 + ".");
+        //////Console.WriteLine("The area of the " + shapeToBuildName + " is " + shapeArea + ".");
+
+        //var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuildName, shapeSize, shapeSize2);
+        //var shapeArea1 = ProgramHelpers.CreateShapeAndGetArea(shapeToBuildName, shapeSize, shapeSize2);
+
+        //Console.WriteLine("The area of the " + shapeToBuildName + " is " + shapeArea1 + ".");
 
         /////var myClass = new Class1();
 

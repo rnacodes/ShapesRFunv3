@@ -3,7 +3,6 @@ namespace ShapesRFun.Shapes;
 //Circle - simple shape
 //Inherits from AbstractShapeBase class
 //Has dimension property and ability to calculate area from the AbstractShapeBase class
-//ImpleMENTS IGetPerimeter interface
 
 public class Circle : AbstractShapeBase
 {
@@ -14,21 +13,20 @@ public class Circle : AbstractShapeBase
     public Circle(int radius)
     {
         Radius = radius;
-        //Dimensions = new Dictionary<string, int> { { "radius", radius } };
     }
 
     public int Diameter {
-        get { return Dimensions["radius"] * 2; }
+        get { return Radius * 2; }
     }
 
     public override int GetArea()
     {
-        return (int)(Math.PI * Math.Pow(Dimensions["radius"], 2));
+        return (int)(Math.PI * Math.Pow(Radius, 2));
     }
 
     public override int GetPerimeter()
     {
-        return (int)(2 * Math.PI * Dimensions["radius"]);
+        return (int)(2 * Math.PI * Radius);
     }
 
     public static List<string> DimensionNames = new List<string> { "radius" };
@@ -37,13 +35,6 @@ public class Circle : AbstractShapeBase
     {
         return DimensionNames;
     }
-
-    /*
-    public new Dictionary<string, int> GetDimensions()
-        {
-            return Dimensions;
-        }
-    */
 
     public static string TellFunnyJoke()
     {

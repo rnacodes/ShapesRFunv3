@@ -8,15 +8,13 @@ namespace ShapesRFun;
 //These are methods needed for the program to run, but are separated from the UI
 public class ProgramHelpers
     {
-
-    
+   
     private static readonly Dictionary<string, List<string>> allShapeDimensions = new Dictionary<string, List<string>>
     {
         {"circle", Circle.GetDimensionNames()},
-        //{"square", Square.DimensionNames},
-        //{"rectangle", Rectangle.DimensionNames},
-        {"triangle", Triangle.GetDimensionNames()} //,
-        //{"rectangular prism", RectangularPrism.DimensionNames}
+        {"triangle", Triangle.GetDimensionNames()},
+        {"rectangular prism", RectangularPrism.GetDimensionNames()},
+        {"tesseract", Tesseract.GetDimensionNames()}
     };
 
 
@@ -70,33 +68,39 @@ public class ProgramHelpers
 
     public static AbstractShapeBase CreateShape(string shapeToBuild, List<int> dimensions)
     {
-        AbstractShapeBase newShape;
+        AbstractShapeBase userCreatedShape;
 
         switch (shapeToBuild.ToLower())
         {
             case "circle":
-                newShape = new Circle(dimensions[0]);
+                userCreatedShape = new Circle(dimensions[0]);
                 break;
             case "triangle":
-                newShape = new Triangle(dimensions[0], dimensions[1]);
+                userCreatedShape = new Triangle(dimensions[0], dimensions[1]);
                 break;
-            /*
             case "rectangular prism":
-                newShape = new RectangularPrism(dimensions[0], dimensions[1], dimensions[2]);
+                userCreatedShape = new RectangularPrism(dimensions[0], dimensions[1], dimensions[2]);
                 break;
-            */
-            /*
             case "tesseract":
-                newShape = new Tesseract(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
+                userCreatedShape = new Tesseract(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
                 break;
-            */
             default:
                 throw new ArgumentException("Invalid shape type.");
         }
 
-        return newShape;
+        return userCreatedShape;
     }
 
+    
+    public static int GetShapeArea(AbstractShapeBase shape)
+    {
+        //return shape.GetArea();
+        var areaHolder = shape.GetArea();
+        return areaHolder;
+    }
+
+
+    //Generates a random number between 1 and 20
     public static int GetRando()
     {
         Random rando = new Random();
@@ -190,60 +194,6 @@ return area;
 }
 
 
-
-
-/*
-public static (string shapeToBuild, int shapeSize, int ShapeSize2) GetShapeInfo(string shapeToBuild)
-{
-var shapeSize = 0;
-var shapeSize2 = 0;
-
-Console.WriteLine("What is the first dimension of the " + shapeToBuild + "?");
-
-while (true)
-{
-try
-{
-    shapeSize = int.Parse(Console.ReadLine());
-    break;
-}
-
-catch (FormatException)
-{
-    Console.WriteLine("Please enter a valid number.");
-}
-}
-
-/* 
-THIS IS FOR SHAPES WITH TWO DIMENSIONS
-
-//This sets up the program to handle more complex shapes with two allShapeDimensions
-//The second dimension is height for rectangle and base for triangle
-//Triangle is assumed to be equilateral or isoceles
-
-if (shapeToBuild == "rectangle" || shapeToBuild == "triangle")
-{
-Console.WriteLine("What is the second dimension of the " + shapeToBuild + "?");
-while (true)
-{
-    try
-    {
-        shapeSize2 = int.Parse(Console.ReadLine());
-        break;
-    }
-    catch (FormatException)
-    {
-        Console.WriteLine("Please enter a valid number.");
-    }
-}
-}
-
-return (shapeToBuild, shapeSize, shapeSize2);
-}
-*/
-
-
-
     /*
     public static void PickFunTrick()
     {
@@ -306,18 +256,8 @@ return (shapeToBuild, shapeSize, shapeSize2);
     */
 
 
-    //Generates a random number between 1 and 20
+    
 
-
-    /*
-    private static readonly Dictionary<string, int> allShapeDimensions = new Dictionary<string, int>
-    {
-        {"circle", 1},
-        {"triangle", 2},
-        {"rectangular prism", 3},
-        {"tesseract", 4}
-    };
-    */
 
 }
 

@@ -9,13 +9,6 @@ public class Triangle : AbstractShapeBase
     {
         BaseLength = baseLength;
         Height = height;
-        /*
-        Dimensions = new Dictionary<string, int>
-        {
-            { "baseLength", baseLength },
-            { "height", height }
-        };
-        */
     }
 
     public int BaseLength { get; set; }
@@ -24,12 +17,12 @@ public class Triangle : AbstractShapeBase
 
     public override int GetArea()
     {
-        return (int)Math.Round((BaseLength * Height)/2.0);
+        return (int)Math.Round((BaseLength * Height) / 2.0);
     }
 
     public override int GetPerimeter()
     {
-        return 3 * BaseLength;
+        return 3 * (BaseLength + Height * 2);
     }
 
     public static string TellFunnyJoke()
@@ -37,7 +30,7 @@ public class Triangle : AbstractShapeBase
         return "What is a triangle’s favorite newspaper? The HypotoNews!";
     }
 
-    public static List<string> DimensionNames = new List<string> { "baseLength", "height" };
+    private static readonly List<string> DimensionNames = new List<string> { "length of base", "height" };
 
     public static List<string> GetDimensionNames()
     {
