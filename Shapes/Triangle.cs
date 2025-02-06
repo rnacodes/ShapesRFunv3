@@ -1,9 +1,10 @@
 ﻿using ShapesRFun.Bases;
+using ShapesRFun.Interfaces;    
 
 namespace ShapesRFun.Shapes;
 
 
-public class Triangle : AbstractShapeBase
+public class Triangle : AbstractShapeBase, ITellJokes
 {
     public Triangle(int baseLength, int height)
     {
@@ -25,7 +26,7 @@ public class Triangle : AbstractShapeBase
         return 3 * (BaseLength + Height * 2);
     }
 
-    public static string TellFunnyJoke()
+    public string TellFunnyJoke()
     {
         return "What is a triangle’s favorite newspaper? The HypotoNews!";
     }

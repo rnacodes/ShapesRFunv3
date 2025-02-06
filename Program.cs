@@ -10,7 +10,6 @@ internal class Program
 
         Console.WriteLine("Which shape would you like me to build? You can choose from the following options:");
 
-        // Print each value from ProgramHelpers.GetFirstValues()
         var shapeNames = ProgramHelpers.GetShapeNames();
         foreach (var shapeName in shapeNames)
         {
@@ -59,6 +58,13 @@ internal class Program
         shapeArea = ProgramHelpers.GetShapeArea(userCreatedShape);
 
         Console.WriteLine("The area of the " + shapeToBuildName + " is " + shapeArea + ".");
+        Thread.Sleep(300);
+
+        /*
+        Console.WriteLine("Would you like to hear a funny joke? Enter the name of a shape to see its specialty!");
+        var funTrickResponse = Console.ReadLine().ToLower();
+        ProgramHelpers.TellFunnyJoke(funTrickResponse);
+        */
 
         //////Console.WriteLine("The area of the " + shapeToBuildName + " is " + shapeArea + ".");
 

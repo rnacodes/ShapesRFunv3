@@ -1,10 +1,12 @@
 ﻿using ShapesRFun.Bases;
+using ShapesRFun.Interfaces;
+
 namespace ShapesRFun.Shapes;
 //Circle - simple shape
 //Inherits from AbstractShapeBase class
 //Has dimension property and ability to calculate area from the AbstractShapeBase class
 
-public class Circle : AbstractShapeBase
+public class Circle : AbstractShapeBase, ITellJokes
 {
     //Circle properties
     public int Radius { get; set; }
@@ -36,7 +38,7 @@ public class Circle : AbstractShapeBase
         return DimensionNames;
     }
 
-    public static string TellFunnyJoke()
+    public string TellFunnyJoke()
     {
         return "Circles are pointless. Now that's a well rounded joke. Not edgy or anything.";
     }

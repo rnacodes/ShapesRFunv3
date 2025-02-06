@@ -1,5 +1,5 @@
 ﻿namespace ShapesRFun.Interfaces;
-public interface IDoFunTricks
+public interface zIDoFunTricks
     {
 
     }

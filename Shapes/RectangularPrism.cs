@@ -3,7 +3,7 @@ using ShapesRFun.Interfaces;
 namespace ShapesRFun.Shapes;
 
 
-public class RectangularPrism : AbstractShapeBase
+public class RectangularPrism : AbstractShapeBase, ITellJokes
 {
     public int Height { get; set; }
     public int Width { get; set; }
@@ -24,7 +24,7 @@ public class RectangularPrism : AbstractShapeBase
         return Height * Width * Depth;
     }
 
-    public static string TellFunnyJoke()
+    public string TellFunnyJoke()
     {
         return "So a rectangular prism walks into a bar And the bartender asks, \"Why the four long faces?\".";
     }

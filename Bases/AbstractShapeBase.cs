@@ -12,22 +12,6 @@ public abstract class AbstractShapeBase : IGetArea, IGetPerimeter
     {
         Dimensions = new Dictionary<string, int> { };
     }
-    /*
-    public AbstractShapeBase(Dictionary<string, int> dimensions)
-    {
-        Dimensions = dimensions;
-    }
-    */
-
-
-    /*
-    public AbstractShapeBase(int height = 0, int width = 0, int depth = 0, int wDimension = 0)
-    {
-        
-    }
-    */
-
-    // Property for size - name and number
 
     public Dictionary<string, int> Dimensions { get; set; }
 
