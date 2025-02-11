@@ -9,7 +9,27 @@ namespace ShapesRFun;
 //These are methods needed for the program to run, but are separated from the UI
 public class ProgramHelpers
 {
+    public static readonly List<string> AllShapeNames =
+    [
+    "circle", 
+    "triangle", 
+    "rectangular prism", 
+    "tesseract"
+    ];
 
+    /*
+   public static bool IsValidShape(string shapeToBuild)
+   {
+       shapeToBuild = shapeToBuild.ToLower();
+       if (!AllShapeNames.Contains(shapeToBuild))
+       {
+           throw new ArgumentException("Invalid shape type.");
+       }
+       else return true;
+   }
+    */
+
+    /*
     private static readonly Dictionary<string, List<string>> allShapeDimensions = new Dictionary<string, List<string>>
     {
         {"circle", Circle.GetDimensionNames()},
@@ -17,29 +37,45 @@ public class ProgramHelpers
         {"rectangular prism", RectangularPrism.GetDimensionNames()},
         {"tesseract", Tesseract.GetDimensionNames()}
     };
+    */
 
-
+    /*
     // Method to get the names of the shapes
     public static List<string> GetShapeNames()
     {
         return allShapeDimensions.Keys.ToList();
     }
+    */
 
     public static AbstractShapeBase CreateShapeFromUserInput(string shapeToBuild)
     {
-        if (!allShapeDimensions.ContainsKey(shapeToBuild.ToLower()))
+        shapeToBuild = shapeToBuild.ToLower();
+
+        if (!AllShapeNames.Contains(shapeToBuild))
         {
             throw new ArgumentException("Invalid shape type.");
         }
 
-        /*
-        if (!allShapeDimensions.TryGetValue(shapeToBuild.ToLower(), out List<string> dimensionNames))
-        {
-            throw new ArgumentException("Invalid shape type.");
-        }
-        */
+        List<int> dimensions = new List<int>();
+        List<string> dimensionNames;
 
-        List<string> dimensionNames = allShapeDimensions[shapeToBuild.ToLower()];
+        switch (shapeToBuild)
+        {
+            case "circle":
+                dimensionNames = Circle.GetDimensionNames();
+                break;
+            case "triangle":
+                dimensionNames = Triangle.GetDimensionNames();
+                break;
+            case "rectangular prism":
+                dimensionNames = RectangularPrism.GetDimensionNames();
+                break;
+            case "tesseract":
+                dimensionNames = Tesseract.GetDimensionNames();
+                break;
+            default:
+                throw new ArgumentException("Invalid shape type.");
+        }
 
         for (int i = 0; i < dimensionNames.Count; i++)
         {
@@ -49,7 +85,7 @@ public class ProgramHelpers
                 try
                 {
                     int dimension = int.Parse(Console.ReadLine());
-                    dimensionNames.Add(dimension);
+                    dimensions.Add(dimension);
                     break;
                 }
                 catch (FormatException)
@@ -59,9 +95,37 @@ public class ProgramHelpers
             }
         }
 
-        return CreateShape(shapeToBuild, dimensions);
+        return DetermineShapeToBuild(shapeToBuild, dimensions);
     }
 
+    public static AbstractShapeBase DetermineShapeToBuild(string shapeToBuild, List<int> dimensions)
+    {
+        shapeToBuild = shapeToBuild.ToLower();
+        AbstractShapeBase userCreatedShape;
+
+        switch (shapeToBuild)
+        {
+            case "circle":
+                userCreatedShape = new Circle(dimensions[0]);
+                break;
+            case "triangle":
+                userCreatedShape = new Triangle(dimensions[0], dimensions[1]);
+                break;
+            case "rectangular prism":
+                userCreatedShape = new RectangularPrism(dimensions[0], dimensions[1], dimensions[2]);
+                break;
+            case "tesseract":
+                userCreatedShape = new Tesseract(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
+                break;
+            default:
+                throw new ArgumentException("Invalid shape type.");
+        }
+
+        return userCreatedShape;
+    }
+
+
+    /*
     public static AbstractShapeBase CreateShape(string shapeToBuild, List<int> dimensions)
     {
         AbstractShapeBase userCreatedShape;
@@ -86,6 +150,7 @@ public class ProgramHelpers
 
         return userCreatedShape;
     }
+    */
 
     /*
      

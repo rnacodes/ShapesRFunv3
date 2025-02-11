@@ -1,5 +1,4 @@
 ﻿using ShapesRFun.Bases;
-using ShapesRFun.Shapes;
 
 namespace ShapesRFun;
 internal class Program
@@ -10,8 +9,9 @@ internal class Program
 
         Console.WriteLine("Which shape would you like me to build? You can choose from the following options:");
 
-        var shapeNames = ProgramHelpers.GetShapeNames();
-        foreach (var shapeName in shapeNames)
+        //var shapeNames = ProgramHelpers.GetShapeNames();
+
+        foreach (var shapeName in ProgramHelpers.AllShapeNames)
         {
             Console.WriteLine($"{shapeName}");
         }
@@ -26,9 +26,7 @@ internal class Program
             {
                 shapeToBuildName = Console.ReadLine().ToLower();
 
-                //UPDATE WITH CURRENT LIST OF SHAPES
-
-                if (!shapeNames.Contains(shapeToBuildName))
+                if (!ProgramHelpers.AllShapeNames.Contains(shapeToBuildName))
                 {
                     throw new InvalidInputException("Please enter a valid shape.");
                 }
@@ -48,7 +46,7 @@ internal class Program
         //Console.WriteLine("Creating shape....................");
         //Thread.Sleep(400);
 
-        userCreatedShape = ProgramHelpers.CreateShapeFromUserInput(shapeToBuildName);
+        userCreatedShape = ProgramHelpers.CreateShapeFromUserInput(shapeToBuildName, userCreatedShape);
 
         Console.WriteLine("Your "+ shapeToBuildName + " has been created.");
 
