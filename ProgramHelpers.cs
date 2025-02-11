@@ -27,12 +27,19 @@ public class ProgramHelpers
 
     public static AbstractShapeBase CreateShapeFromUserInput(string shapeToBuild)
     {
-        if (!allShapeDimensions.TryGetValue(shapeToBuild.ToLower(), out List<string> dimensionNames))
+        if (!allShapeDimensions.ContainsKey(shapeToBuild.ToLower()))
         {
             throw new ArgumentException("Invalid shape type.");
         }
 
-        var dimensions = new List<int>();
+        /*
+        if (!allShapeDimensions.TryGetValue(shapeToBuild.ToLower(), out List<string> dimensionNames))
+        {
+            throw new ArgumentException("Invalid shape type.");
+        }
+        */
+
+        List<string> dimensionNames = allShapeDimensions[shapeToBuild.ToLower()];
 
         for (int i = 0; i < dimensionNames.Count; i++)
         {
@@ -42,7 +49,7 @@ public class ProgramHelpers
                 try
                 {
                     int dimension = int.Parse(Console.ReadLine());
-                    dimensions.Add(dimension);
+                    dimensionNames.Add(dimension);
                     break;
                 }
                 catch (FormatException)
@@ -129,8 +136,9 @@ public class ProgramHelpers
         Random rando = new Random();
         return rando.Next(1, 21);
     }
-
 }
+
+
 
 /* //EXAMPLE SYNTAX BELOW///////////////////////////////////////
         
@@ -194,5 +202,5 @@ public class ProgramHelpers
     }
     */
 
-*/
+
 
